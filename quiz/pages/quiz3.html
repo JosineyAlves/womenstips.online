@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Etapa 2</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- Inclusão do Google Fonts para a fonte Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vamos falar de nutrição. Com que frequência você come refeições ricas em carboidratos, como pães, laticínios, macarrão, etc?</h1>
+        <h2>Sem julgamento: isso nos ajudará a personalizar seu plano</h2>
+        <ul>
+            <li class="quiz-option quiz-option2">
+                <a>Frequentemente</a>
+            </li>
+            <li class="quiz-option quiz-option2">
+                <a>Às vezes</a>
+            </li>
+            <li class="quiz-option quiz-option2">
+                <a>Raramente</a>
+            </li>
+            <li class="quiz-option quiz-option2">
+                <a>Nem um pouco</a>
+            </li>
+        </ul>
+        <div class="button-container">
+            <button id="voltar" onclick="window.location.href='/quiz/2';">Voltar</button>
+            <button id="avançar" onclick="window.location.href='/quiz/4';" disabled>Avançar</button>
+
+        </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Assume que existem 5 etapas no quiz
+            var step = new URLSearchParams(window.location.search).get('step') || 1; // Pega o 'step' da URL ou assume 1 se não estiver disponível
+            var totalSteps = 5;
+            var progressPercentage = (step / totalSteps) * 100;
+
+            var progressBar = document.getElementById('progress-bar');
+            if (progressBar) {
+                progressBar.style.width = progressPercentage + '%';
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
