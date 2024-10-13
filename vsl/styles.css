@@ -191,16 +191,18 @@ footer {
 }
 
 .urgencia {
-	background-color: #ffffff;
-    border: 8px solid #FFC107;
-	padding: 10px;
-	border-radius: 20px;
-	max-width: 600px;
-	margin: 0 auto;
+    background-color: #ffffff;
+    border: none; /* Remove a borda */
+    padding: 20px;
+    border-radius: 20px; /* Bordas arredondadas */
+    max-width: 600px;
+    margin: 0 auto;
     margin-bottom: 50px;
     align-items: center;
     text-align: center;
     width: 80%;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1); /* Leve sombra atrás */
+    transition: box-shadow 0.3s ease; /* Suaviza a sombra ao passar o mouse */
 }
 
 .urgencia h1 {
