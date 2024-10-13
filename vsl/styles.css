@@ -228,13 +228,14 @@ footer {
 .buy-now-button {
     background-color: #FFD700; /* Cor amarelo ouro */
     color: #000; /* Cor do texto preto */
-    border: 2px solid #FFA500; /* Borda laranja */
+    border: none; /* Remove a borda */
     border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px 50px; /* Espaçamento interno */
+    padding: 15px 50px; /* Espaçamento interno */
     font-size: 20px; /* Tamanho do texto */
     font-weight: bold; /* Texto em negrito */
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
     margin-top: 5px;
-    font-weight: 900;
+    font-weight: 700;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Leve sombra atrás */
+    transition: box-shadow 0.3s ease; /* Suaviza a sombra ao passar o mouse */
 }
-
