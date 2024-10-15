@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health News</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Estilos CSS Otimizados -->
+    <style>
+      /* Box sizing */
+      *,
+      *:before,
+      *:after {
+      box-sizing: border-box;
+      }
+      /* Reset de margens e fontes */
+      body,
+      html {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      }
+      /* HEADER */
+      /* Header */
+      .header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 4px solid #c20017;
+      margin-bottom: 20px;
+      }
+      /* Header Right */
+      .header-right {
+      display: flex;
+      align-items: center; 
+      gap: 10px; 
+      }
+      .header img {
+      height: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      }
+      /* Menu de navegação no header */
+      .nav-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      }
+      .nav-menu ul li {
+      margin-left: 20px;
+      }
+      .nav-menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s;
+      }
+      .nav-menu ul li a:hover {
+      color: #ffcc00;
+      }
+      /* Responsividade para o menu de navegação */
+      @media (max-width: 768px) {
+      .nav-menu ul {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+      }
+      .nav-menu ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+      }
+      }
+      .button-right {
+      background-color: #c20017;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      }
+      /* Responsividade para o header */
+      @media (min-width: 1024px) {
+      .header {
+      padding: 10px 200px;
+      }
+      }
+      /* CONTAINER PRINCIPAL */
+      /* Container */
+      .container {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      padding: 0px 20px;
+      text-align: center;
+      }
+      .headline {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 32px;
+      color: #222;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      }
+      /* Imagem */
+      .image-container {
+      text-align: center;
+      margin: 20px 0;
+      }
+      .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+      margin-bottom: 20px;
+      }
+      /* Conteúdo de texto */
+      .text-content {
+      text-align: left;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #333;
+      }
+      .text-content p {
+      margin-bottom: 20px;
+      }
+      /* Botões */
+      .button-container {
+      text-align: center;
+      margin-top: 20px;
+      }
+      .button-custom {
+      display: inline-block;
+      background-color: #ffc107;
+      color: #333;
+      padding: 20px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      }
+      .button-custom:hover {
+      background-color: #e6a600;
+      }
+      /* PERFIL DO CRIADOR DO CONTEÚDO */
+      .creator-profile {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      }
+      .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      }
+      .creator-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 2px solid #003366;
+      }
+      .creator-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      }
+      .creator-name {
+      font-weight: bold;
+      }
+      .creator-info {
+      font-size: 14px;
+      color: #555;
+      }
+      /* LINHAS E ICÔNES SOCIAIS */
+      /* Linha de separação */
+      .line {
+      border: none;
+      border-top: 1px solid #cedfef;
+      margin: 0;
+      }
+      /* Ícones sociais */
+      .social-icons-container {
+      text-align: center;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      }
+      .social-icons-container i {
+      display: inline-flex;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #003366;
+      font-size: 15px;
+      transition: color 0.3s ease;
+      border: 2px solid #003366;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      }
+      /* FOOTER */
+      /* Footer */
+      footer {
+      background-color: #003366;
+      color: #d3d3d3;
+      padding: 20px 0;
+      font-size: 12px;
+      font-weight: 100;
+      border-top: 1px solid #1e293b;
+      margin-top: 50px;
+      }
+      .footer-content {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+      padding: 0 20px;
+      }
+      .footer-logo img {
+      height: 50px;
+      opacity: .15;
+      }
+      .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      }
+      .footer-links ul li {
+      margin-left: 20px;
+      }
+      .footer-links ul li a {
+      color: #d3d3d3;
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.3s ease;
+      }
+      .footer-links ul li a:hover {
+      color: #ffcc00;
+      }
+      /* Descrição do site */
+      .footer-description {
+      max-width: 1200px;
+      width: 100%;
+      margin: 20px auto;
+      text-align: center;
+      padding: 0 20px;
+      }
+      .footer-description p {
+      margin: 0;
+      font-size: 12px;
+      color: #d3d3d3;
+      line-height: 1.5;
+      }
+      /* RESPONSIVIDADE */
+      /* Footer responsivo */
+      @media (max-width: 768px) {
+      .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      }
+      .footer-logo {
+      flex-basis: 50%;
+      }
+      .footer-links {
+      flex-basis: 50%;
+      text-align: right;
+      }
+      .footer-links ul {
+      display: flex;
+      justify-content: flex-end;
+      }
+      .footer-links ul li {
+      margin: 5px 10px;
+      }
+      .footer-description {
+      text-align: center;
+      }
+      }
+      /* Ajuste para telas menores (mobile) */
+      @media (max-width: 480px) {
+      .footer-content {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      }
+      .footer-logo {
+      flex-basis: 40%;
+      text-align: left;
+      }
+      .footer-links {
+      flex-basis: 60%;
+      text-align: right;
+      }
+      .footer-links ul {
+      flex-direction: row;
+      justify-content: flex-end;
+      }
+      .footer-links ul li {
+      margin-left: 10px;
+      }
+      }
+      /* Menu hambúrguer responsivo */
+      .hamburger-menu {
+      display: none;
+      font-size: 24px;
+      color: white;
+      margin-left: 15px;
+      cursor: pointer;
+      }
+      @media (max-width: 768px) {
+      .nav-menu {
+      display: none;
+      }
+      .hamburger-menu {
+      display: block;
+      }
+      }
+      /* Categoria */
+      .category-label {
+      display: inline-block;
+      background-color: #c20017;
+      color: white;
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-size: 14px;
+      }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MX35NJ2W");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX35NJ2W" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="header">
+      <img src="img/logo.png" alt="Logo" />
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#">U.S.</a></li>
+          <li><a href="#">Politics</a></li>
+          <li><a href="#">World</a></li>
+          <li><a href="#">Opinion</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Entertainment</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Video</a></li>
+          <li><a href="#">More⋮</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <a href="https://news.womenstips.online/preclick">
+        <button class="button-right">Watch TV</button>
+        </a>
+        <div class="hamburger-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="category-label">Health News</div>
+      <h1 class="headline">
+        Dr. Julian Ross, a weight loss specialist, claims that the 'Turmeric Trick' is up to 3x more effective than Ozempic!
+      </h1>
+      <div class="creator-profile">
+        <div class="profile">
+          <div class="creator-image">
+            <img src="img/autor.webp" alt="Pedro Álvares" width="96" height="96" />
+          </div>
+          <div>
+            <div class="creator-name">David Marcus | Fox News</div>
+            <div class="creator-info">Published September 22, 2024 9:55am EDT</div>
+          </div>
+        </div>
+      </div>
+      <hr class="line" />
+      <div class="social-icons-container">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+      </div>
+      <hr class="line" />
+    </div>
+    <div class="container">
+      <div class="image-container">
+        <a href="https://news.womenstips.online/preclick">
+        <img src="img/thumb.png" alt="Image description" />
+        </a>
+      </div>
+      <div class="text-content">
+        <p>
+          <b><a href="https://news.womenstips.online/preclick" target="_blank">Dr. Julian Ross</a></b> reveals a simple and incredibly effective trick that anyone can use to dissolve stubborn fat cells and boost metabolism as if they were in their 20s. This trick, now <b>clinically proven</b>, makes your body fight inflammation and shrink measurements from the belly, arms, and thighs by efficiently transforming fat into energy without any effort.
+        </p>
+        <p>
+          This revolutionary solution is more effective than conventional treatments and <b>three times stronger</b> than Ozempic for weight loss, and it has helped people achieve astounding results without the need for restrictive diets or risky surgeries.
+        </p>
+        <p>
+          No more struggling with the scale and feeling frustrated with ineffective methods that worsen your health causing rebound effects.
+        </p>
+        <p>
+          Watch this free interview on the <b><a href="https://news.womenstips.online/preclick" target="_blank">Better Health program</a></b> to discover how you can start using this <b><a href="https://news.womenstips.online/preclick" target="_blank">turmeric trick</a></b> at home and see the fat disappear quickly, almost overnight.
+        </p>
+      </div>
+      <div class="button-container">
+        <a href="https://news.womenstips.online/preclick" class="button-custom">Click Here To Watch The Interview</a>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="img/fox-news-logo-square.svg" alt="Logo Fox News" />
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="#email">Email Newsletters</a></li>
+            <li><a href="#cookie">Cookie Preferences</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-description">
+        <p>
+          Fox News is your trusted source for breaking news, expert analysis, and in-depth reporting on the most important stories across the U.S. and around the world.
+        </p>
+        <p>This website is not part of Google, Inc. or Google.com, nor is it sponsored or endorsed by Google. YouTube is a registered trademark of Google, Inc. Disclaimer: This site is provided for educational purposes only. Please consult a healthcare professional before implementing any strategies discussed on this website.</p>
+      </div>
+    </footer>
+    <script type="text/javascript" src="https://1d5rz.ttrk.io/track.js?rtkcmpid=670dd02004769e837d41197a"></script>
+  </body>
+</html>
