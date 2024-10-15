@@ -24,14 +24,16 @@
          })(window,document,'script','dataLayer','GTM-MX35NJ2W');
       </script>
       <!-- End Google Tag Manager -->
-      <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
-      <script>
-        window.pixelId = "668ebae3630a771db5a53c7a";
-        var a = document.createElement("script");
-        a.setAttribute("async", "");
-        a.setAttribute("defer", "");
-        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-        document.head.appendChild(a);
+        <script>
+          window.onload = function () {
+              var links = document.getElementsByTagName("a");
+              for (var i = 0, n = links.length; i < n; i++) {
+                  var href = links[i].href.trim() +
+                          (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                          document.location.search.replace('?', '').toString();
+                  links[i].href = href;
+              }
+          }
       </script>
    </head>
    <body>
