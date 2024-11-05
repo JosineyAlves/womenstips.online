@@ -1,365 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health News</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Estilos CSS Otimizados -->
     <style>
-      /* Box sizing */
-      *,
-      *:before,
-      *:after {
-      box-sizing: border-box;
-      }
-      /* Reset de margens e fontes */
-      body,
-      html {
-      margin: 0;
-      padding: 0;
-      font-family: "Roboto", sans-serif;
-      }
-      /* HEADER */
-      /* Header */
-      .header {
-      background-color: #003366;
-      color: white;
-      padding: 5px 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 4px solid #c20017;
-      margin-bottom: 20px;
-      }
-      /* Header Right */
-      .header-right {
-      display: flex;
-      align-items: center; 
-      gap: 10px; 
-      }
-      .header img {
-      height: 50px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      }
-      /* Menu de navegação no header */
-      .nav-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      }
-      .nav-menu ul li {
-      margin-left: 20px;
-      }
-      .nav-menu ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: color 0.3s;
-      }
-      .nav-menu ul li a:hover {
-      color: #ffcc00;
-      }
-      /* Responsividade para o menu de navegação */
-      @media (max-width: 768px) {
-      .nav-menu ul {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 10px;
-      }
-      .nav-menu ul li {
-      margin-left: 0;
-      margin-bottom: 10px;
-      }
-      }
-      .button-right {
-      background-color: #c20017;
-      color: white;
-      padding: 8px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      }
-      /* Responsividade para o header */
-      @media (min-width: 1024px) {
-      .header {
-      padding: 5px 200px;
-      }
-      }
-      /* CONTAINER PRINCIPAL */
-      /* Container */
-      .container {
-      width: 100%;
-      max-width: 800px;
-      margin: auto;
-      padding: 0px 5px;
-      text-align: center;
-      }
-      .headline {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 28px;
-      color: #222;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      }
-      /* Imagem */
-      .image-container {
-      text-align: center;
-      margin: 20px 0;
-      }
-      .image-container img {
-      max-width: 100%;
-      height: auto;
-      display: inline-block;
-      margin-top: 50px;
-      }
-      /* Conteúdo de texto */
-      .text-content {
-      text-align: left;
-      font-size: 20px;
-      line-height: 1.4;
-      color: #333;
-      }
-      .text-content p {
-      margin-bottom: 20px;
-      }
-      /* PERFIL DO CRIADOR DO CONTEÚDO */
-      .creator-profile {
-      margin-top: 50px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      }
-      .profile {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      }
-      .creator-image {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-      border: 2px solid #003366;
-      }
-      .creator-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      }
-      .creator-name {
-      font-weight: bold;
-      font-size: 14px;
-      }
-      .creator-info {
-      font-size: 12px;
-      color: #555;
-      }
-      /* LINHAS E ICÔNES SOCIAIS */
-      /* Linha de separação */
-      .line {
-      border: none;
-      border-top: 1px solid #cedfef;
-      margin: 0;
-      }
-      /* Ícones sociais */
-      .social-icons-container {
-      text-align: center;
-      margin: 10px;
-      display: flex;
-      justify-content: center;
-      }
-      .social-icons-container i {
-      display: inline-flex;
-      margin: 0 10px;
-      text-decoration: none;
-      color: #003366;
-      font-size: 15px;
-      transition: color 0.3s ease;
-      border: 2px solid #003366;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      justify-content: center;
-      align-items: center;
-      }
-      /* FOOTER */
-      /* Footer */
-      footer {
-      background-color: #003366;
-      color: #d3d3d3;
-      padding: 20px 0;
-      font-size: 12px;
-      font-weight: 100;
-      border-top: 1px solid #1e293b;
-      margin-top: 50px;
-      }
-      .footer-content {
-      max-width: 1200px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: auto;
-      padding: 0 20px;
-      }
-      .footer-logo img {
-      height: 50px;
-      opacity: .15;
-      }
-      .footer-links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      }
-      .footer-links ul li {
-      margin-left: 20px;
-      }
-      .footer-links ul li a {
-      color: #d3d3d3;
-      text-decoration: none;
-      font-size: 12px;
-      transition: color 0.3s ease;
-      }
-      .footer-links ul li a:hover {
-      color: #ffcc00;
-      }
-      /* Descrição do site */
-      .footer-description {
-      max-width: 1200px;
-      width: 100%;
-      margin: 20px auto;
-      text-align: center;
-      padding: 0 20px;
-      }
-      .footer-description p {
-      margin: 0;
-      font-size: 12px;
-      color: #d3d3d3;
-      line-height: 1.5;
-      }
-      /* RESPONSIVIDADE */
-      /* Footer responsivo */
-      @media (max-width: 768px) {
-      .footer-content {
-      flex-direction: row;
-      justify-content: space-between;
-      }
-      .footer-logo {
-      flex-basis: 50%;
-      }
-      .footer-links {
-      flex-basis: 50%;
-      text-align: right;
-      }
-      .footer-links ul {
-      display: flex;
-      justify-content: flex-end;
-      }
-      .footer-links ul li {
-      margin: 5px 10px;
-      }
-      .footer-description {
-      text-align: center;
-      }
-      }
-      /* Ajuste para telas menores (mobile) */
-      @media (max-width: 480px) {
-      .footer-content {
-      flex-direction: row;
-      align-items: center;
-      text-align: left;
-      }
-      .footer-logo {
-      flex-basis: 40%;
-      text-align: left;
-      }
-      .footer-links {
-      flex-basis: 60%;
-      text-align: right;
-      }
-      .footer-links ul {
-      flex-direction: row;
-      justify-content: flex-end;
-      }
-      .footer-links ul li {
-      margin-left: 10px;
-      }
-      }
-      /* Menu hambúrguer responsivo */
-      .hamburger-menu {
-      display: none;
-      font-size: 24px;
-      color: white;
-      margin-left: 15px;
-      cursor: pointer;
-      }
-      @media (max-width: 768px) {
-      .nav-menu {
-      display: none;
-      }
-      .hamburger-menu {
-      display: block;
-      }
-      }
-      /* Categoria */
-      .category-label {
-      display: inline-block;
-      background-color: #c20017;
-      color: white;
-      padding: 5px 10px;
-      font-weight: bold;
-      border-radius: 5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      font-size: 14px;
-      }
+        *{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Roboto,sans-serif}.header{background-color:#003366;color:#fff;padding:5px 15px;display:flex;align-items:center;justify-content:space-between;border-top:4px solid #c20017;margin-bottom:20px}.header img{height:50px;margin-top:10px;margin-bottom:10px}.nav-menu ul{list-style:none;margin:0;padding:0;display:flex}.nav-menu ul li{margin-left:20px}.nav-menu ul li a{color:#fff;text-decoration:none;font-weight:600;font-size:14px;transition:color .3s}.nav-menu ul li a:hover{color:#ffcc00}@media(max-width:768px){.nav-menu ul{display:none}}.button-right{background-color:#c20017;color:#fff;padding:8px 15px;border:none;border-radius:5px;cursor:pointer;font-weight:bold}@media(min-width:1024px){.header{padding:5px 200px}}.container{width:100%;max-width:900px;margin:auto;padding:0 5px;text-align:center}.headline{text-align:center;margin:20px 0;font-size:28px;color:#222;font-weight:900;letter-spacing:-.5px}.image-container{text-align:center;margin:20px 0}.image-container img{max-width:100%;height:auto;display:inline-block;margin-top:50px}.text-content{text-align:left;font-size:20px;line-height:1.4;color:#333}.text-content p{margin-bottom:20px}.creator-profile{margin-top:30px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;text-align:left}.profile{display:flex;align-items:center;margin-bottom:10px}.creator-image{width:40px;height:40px;border-radius:50%;margin-right:10px;border:2px solid #003366}.creator-image img{width:100%;height:100%;object-fit:cover;border-radius:50%}.creator-name{font-weight:bold;font-size:14px}.creator-info{font-size:12px;color:#555}.line{border:none;border-top:1px solid #cedfef;margin:0}.social-icons-container{text-align:center;margin:10px;display:flex;justify-content:center}.social-icons-container i{display:inline-flex;margin:0 10px;text-decoration:none;color:#003366;font-size:15px;transition:color .3s ease;border:2px solid #003366;border-radius:50%;width:30px;height:30px;justify-content:center;align-items:center}footer{background-color:#003366;color:#d3d3d3;padding:20px 0;font-size:12px;font-weight:100;border-top:1px solid #1e293b;margin-top:50px}.footer-content{max-width:1200px;width:100%;display:flex;justify-content:space-between;align-items:center;margin:auto;padding:0 20px}.footer-logo img{height:50px;opacity:.15}.footer-links ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap}.footer-links ul li{margin-left:20px}.footer-links ul li a{color:#d3d3d3;text-decoration:none;font-size:12px;transition:color .3s ease}.footer-links ul li a:hover{color:#ffcc00}@media(max-width:768px){.footer-content{flex-direction:row;justify-content:space-between}.footer-logo{flex-basis:50%}.footer-links{flex-basis:50%;text-align:right}.footer-links ul{display:flex;justify-content:flex-end}.footer-links ul li{margin:5px 10px}}@media(max-width:480px){.footer-content{flex-direction:row;align-items:center;text-align:left}.footer-logo{flex-basis:40%;text-align:left}.footer-links{flex-basis:60%;text-align:right}.footer-links ul{flex-direction:row;justify-content:flex-end}.footer-links ul li{margin-left:10px}}.category-label{background-color:#c20017;color:#fff;padding:5px 10px;font-weight:bold;border-radius:5px;text-transform:uppercase;font-size:14px;display:inline-block;margin-bottom:10px}.footer-description{padding:0 20px;text-align:center;font-size:12px;color:#d3d3d3;line-height:1.5;margin:20px auto}
     </style>
     <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
     <script>
-      window.pixelId = "668ebae3630a771db5a53c7a";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      document.head.appendChild(a);
+        window.pixelId = "668ebae3630a771db5a53c7a";
+        var a = document.createElement("script");
+        a.async = true; a.defer = true; a.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+        document.head.appendChild(a);
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-MX35NJ2W");
-    </script>
-    <!-- End Google Tag Manager -->
-  </head>
-  <body>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MX35NJ2W"></script>
+</head>
+<body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX35NJ2W" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="header">
-      <img src="img/logo.png" alt="Logo" />
+      <img src="https://i.imgur.com/UBiipLA.png" alt="Logo" />
       <nav class="nav-menu">
         <ul>
           <li><a href="#">U.S.</a></li>
@@ -376,9 +45,6 @@
       </nav>
       <div class="header-right">
         <button class="button-right">Watch TV</button>
-        <div class="hamburger-menu">
-          <i class="fas fa-bars"></i>
-        </div>
       </div>
     </div>
     <div class="container">
@@ -390,7 +56,6 @@
     <div class="container">
       <div class="image-container">
         <div id="vid_6703fc6144bd46000bbdbaac" style="position: relative; width: 100%; padding: 177.3399014778325% 0 0;"> <img id="thumb_6703fc6144bd46000bbdbaac" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/6703fc6144bd46000bbdbaac/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_6703fc6144bd46000bbdbaac" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_6703fc6144bd46000bbdbaac"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/6703fc6144bd46000bbdbaac/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>
-      <script>setTimeout(() =>{ const iframes = document.querySelectorAll('iframe');iframes.forEach((iframe) => { if (iframe.parentNode) { iframe.parentNode.removeChild(iframe); } }) },1000)</script>
       </div>
       <div class="text-content">
         <p>
@@ -403,7 +68,7 @@
     <div class="creator-profile">
       <div class="profile">
         <div class="creator-image">
-          <img src="img/autor.webp" alt="Pedro Álvares" width="96" height="96" />
+          <img src="https://i.imgur.com/fFo1hdH.png" alt="Pedro Álvares" width="96" height="96" />
         </div>
         <div>
           <div class="creator-name">David Marcus | Fox News</div>
@@ -423,7 +88,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="img/fox-news-logo-square.svg" alt="Logo Fox News" />
+          <img src="https://i.imgur.com/5i7OnaV.png" alt="Logo Fox News" />
         </div>
         <div class="footer-links">
           <ul>
