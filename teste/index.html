@@ -1,499 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health News</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Estilos CSS Otimizados -->
-    <style>
-      /* Box sizing */
-      *,
-      *:before,
-      *:after {
-      box-sizing: border-box;
-      }
-      /* Reset de margens e fontes */
-      body,
-      html {
-      margin: 0;
-      padding: 0;
-      font-family: "Roboto", sans-serif;
-      }
-      /* HEADER */
-      /* Header */
-      .header {
-      background-color: #003366;
-      color: white;
-      padding: 10px 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 4px solid #c20017;
-      margin-bottom: 20px;
-      }
-      /* Header Right */
-      .header-right {
-      display: flex;
-      align-items: center; 
-      gap: 10px; 
-      }
-      .header img {
-      height: 40px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      }
-      /* Menu de navegação no header */
-      .nav-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      }
-      .nav-menu ul li {
-      margin-left: 20px;
-      }
-      .nav-menu ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: color 0.3s;
-      }
-      .nav-menu ul li a:hover {
-      color: #ffcc00;
-      }
-      /* Responsividade para o menu de navegação */
-      @media (max-width: 768px) {
-      .nav-menu ul {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 10px;
-      }
-      .nav-menu ul li {
-      margin-left: 0;
-      margin-bottom: 10px;
-      }
-      }
-      .button-right {
-      background-color: #c20017;
-      color: white;
-      padding: 8px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      }
-      /* Responsividade para o header */
-      @media (min-width: 1024px) {
-      .header {
-      padding: 10px 200px;
-      }
-      }
-      /* CONTAINER PRINCIPAL */
-      /* Container */
-      .container {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      padding: 0px 10px;
-      text-align: center;
-      }
-      .headline {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 30px;
-      color: #000000;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      }
-      /* Imagem */
-      .image-container {
-      text-align: center;
-      margin: 20px 0;
-      }
-      .image-container img {
-      max-width: 100%;
-      height: auto;
-      display: inline-block;
-      margin-bottom: 20px;
-      }
-      /* Conteúdo de texto */
-      .text-content {
-      text-align: left;
-      font-size: 16px;
-      line-height: 1.4;
-      color: #54595f;
-      }
-      /* Botões */
-      .button-container {
-      text-align: center;
-      margin-top: 20px;
-      }
-      .button-custom {
-      display: inline-block;
-      background-color: #fffb00;
-      color: #000000;
-      padding: 20px 20px;
-      border-bottom: solid 3px #272727;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: 900;
-      cursor: pointer;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      }
-      .button-custom:hover {
-      background-color: #e6a600;
-      }
-      /* PERFIL DO CRIADOR DO CONTEÚDO */
-      .creator-profile {
-      margin-top: 100px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      }
-      .profile {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      }
-      .creator-image {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-      border: 2px solid #003366;
-      }
-      .creator-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      }
-      .creator-name {
-      font-weight: bold;
-      }
-      .creator-info {
-      font-size: 14px;
-      color: #555;
-      }
-      /* LINHAS E ICÔNES SOCIAIS */
-      /* Linha de separação */
-      .line {
-      border: none;
-      border-top: 1px solid #cedfef;
-      margin: 0;
-      }
-      /* Ícones sociais */
-      .social-icons-container {
-      text-align: center;
-      margin: 10px;
-      display: flex;
-      justify-content: center;
-      }
-      .social-icons-container i {
-      display: inline-flex;
-      margin: 0 10px;
-      text-decoration: none;
-      color: #003366;
-      font-size: 15px;
-      transition: color 0.3s ease;
-      border: 2px solid #003366;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      justify-content: center;
-      align-items: center;
-      }
-      /* FOOTER */
-      /* Footer */
-      footer {
-      background-color: #003366;
-      color: #d3d3d3;
-      padding: 20px 0;
-      font-size: 12px;
-      font-weight: 100;
-      border-top: 1px solid #1e293b;
-      margin-top: 20px;
-      }
-      .footer-content {
-      max-width: 1200px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: auto;
-      padding: 0 20px;
-      }
-      .footer-logo img {
-      height: 50px;
-      opacity: .15;
-      }
-      .footer-links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      }
-      .footer-links ul li {
-      margin-left: 20px;
-      }
-      .footer-links ul li a {
-      color: #d3d3d3;
-      text-decoration: none;
-      font-size: 12px;
-      transition: color 0.3s ease;
-      }
-      .footer-links ul li a:hover {
-      color: #ffcc00;
-      }
-      /* Descrição do site */
-      .footer-description {
-      max-width: 1200px;
-      width: 100%;
-      margin: 20px auto;
-      text-align: center;
-      padding: 0 20px;
-      }
-      .footer-description p {
-      margin: 0;
-      font-size: 12px;
-      color: #d3d3d3;
-      line-height: 1.5;
-      }
-      /* RESPONSIVIDADE */
-      /* Footer responsivo */
-      @media (max-width: 768px) {
-      .footer-content {
-      flex-direction: row;
-      justify-content: space-between;
-      }
-      .footer-logo {
-      flex-basis: 50%;
-      }
-      .footer-links {
-      flex-basis: 50%;
-      text-align: right;
-      }
-      .footer-links ul {
-      display: flex;
-      justify-content: flex-end;
-      }
-      .footer-links ul li {
-      margin: 5px 10px;
-      }
-      .footer-description {
-      text-align: center;
-      }
-      }
-      /* Ajuste para telas menores (mobile) */
-      @media (max-width: 480px) {
-      .footer-content {
-      flex-direction: row;
-      align-items: center;
-      text-align: left;
-      }
-      .footer-logo {
-      flex-basis: 40%;
-      text-align: left;
-      }
-      .footer-links {
-      flex-basis: 60%;
-      text-align: right;
-      }
-      .footer-links ul {
-      flex-direction: row;
-      justify-content: flex-end;
-      }
-      .footer-links ul li {
-      margin-left: 10px;
-      }
-      }
-      /* Menu hambúrguer responsivo */
-      .hamburger-menu {
-      display: none;
-      font-size: 24px;
-      color: white;
-      margin-left: 15px;
-      cursor: pointer;
-      }
-      @media (max-width: 768px) {
-      .nav-menu {
-      display: none;
-      }
-      .hamburger-menu {
-      display: block;
-      }
-      }
-      /* Categoria */
-      .category-label {
-      display: inline-block;
-      background-color: #c20017;
-      color: white;
-      padding: 5px 5px;
-      font-weight: bold;
-      border-radius: 5px;
-      text-transform: uppercase;
-      font-size: 12px;
-      }
-      .countdown {
-    text-align: center;
-    margin-top: 20px;
-}
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Turmeric Hack</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+      <link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/player.js" as="script">
+      <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+      <link rel="preload" href="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66a6f097c95515000c71877c/thumbnail.jpg" as="image">
+      <link rel="preload" href="https://cdn.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/66a6f085b8e8e6000b6ef500/main.m3u8" as="fetch">
+      <link rel="dns-prefetch" href="https://cdn.converteai.net">
+      <link rel="dns-prefetch" href="https://scripts.converteai.net">
+      <link rel="dns-prefetch" href="https://images.converteai.net">
+      <link rel="dns-prefetch" href="https://api.vturb.com.br">
+      <link rel="stylesheet" href="styles.css">
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+         })(window,document,'script','dataLayer','GTM-MX35NJ2W');
+      </script>
+      <!-- End Google Tag Manager -->
+      <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      async
+      defer
+    ></script>
+    <script>
+      window.pixelId = "668ebae3630a771db5a53c7a";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+   </head>
+   <body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX35NJ2W"
+         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
 
-.message {
-    font-size: 20px;
-    color: #333;
-    font-weight: 600;
-}
-
-.timer {
-    font-size: 35px;
-    color: #B5281F;
-    margin-top: 0px;
-    font-weight: 700;
-}
-    </style>
-    <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    async
-    defer
-  ></script>
-  <script>
-    window.pixelId = "668ebae3630a771db5a53c7a";
-    var a = document.createElement("script");
-    a.setAttribute("async", "");
-    a.setAttribute("defer", "");
-    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-    document.head.appendChild(a);
-  </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JPT8R3SHS3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JPT8R3SHS3');
-</script>
-  </head>
-  <body>
-    <div class="header">
-      <img src="img/logo.png" alt="Logo" />
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#">U.S.</a></li>
-          <li><a href="#">Politics</a></li>
-          <li><a href="#">World</a></li>
-          <li><a href="#">Opinion</a></li>
-          <li><a href="#">Media</a></li>
-          <li><a href="#">Entertainment</a></li>
-          <li><a href="#">Sports</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          <li><a href="#">Video</a></li>
-          <li><a href="#">More⋮</a></li>
-        </ul>
-      </nav>
-      <div class="header-right">
-        <a href="https://lipozem.com/">
-        <button class="button-right">Watch TV</button>
-        </a>
-        <div class="hamburger-menu">
-          <i class="fas fa-bars"></i>
+      <div class="headline">
+         <picture>
+             <!-- Imagem para desktop -->
+             <source srcset="headline.png" media="(min-width: 768px)">
+             <!-- Imagem para mobile -->
+             <source srcset="headline-mobile.png" media="(max-width: 767px)">
+             <!-- Fallback para navegadores que não suportam <picture> -->
+             <img src="headline.png" alt="Reference 1">
+         </picture>
+     </div>
+      <div class="container">
+         <!-- VTurb -->
+         <div id="vid_66df73d3692a4b000bccc61f" style="position: relative; width: 100%; padding: 56.25% 0 0;"> <img id="thumb_66df73d3692a4b000bccc61f" src="https://images.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66df73d3692a4b000bccc61f/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_66df73d3692a4b000bccc61f" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_66df73d3692a4b000bccc61f"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/66df73d3692a4b000bccc61f/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>         </div>
         </div>
+       </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="category-label">Health News</div>
-      <h1 class="headline">
-        Curious homemade "Oriental Trick" can end Ozempic?
-      </h1>
-      <hr class="line" />
-<div class="container">
-      <div class="image-container">
-        <a href="https://lipozem.com/">
-        <img src="img/thumb.png" alt="Image description" />
-        </a>
-        <div class="button-container">
-          <a href="https://lipozem.com/" class="button-custom">Click Here To Watch The Video</a>
-        </div>
-      </div>
-      <div class="text-content">
-        <p>
-          Renowned health and wellness expert, Dr. Julian Ross, has just revealed a 15-second homemade oriental recipe using turmeric, which promises to change the game for those looking to eliminate excess.
-        </p>
-        <p>
-          This technique is so effective that the Ozempic industry is moving to keep its discoveries out of the public eye.
-        </p>
-        <p>
-          Imagine waking up every morning, without that feeling of bloating, nor the uncontrollable desire to eat things you shouldn’t…
-        </p>
-        <p>
-          More than 14,788 women are already using this simple recipe. Many claim that the energy and result is more powerful than anything else they have tried previously!
-        </p>
-        <p>
-          Click the button below to watch this free video tutorial and find out what you need to do TODAY, to finally achieve the best version of your life in just a few days.
-        </p>
-      </div>
-      <div class="countdown">
-        <p class="message">Spots Available To Attend Free Presentation</p>
-        <div id="timer" class="timer">01:59</div>
-    </div>
-      <div class="button-container">
-        <a href="https://lipozem.com/" class="button-custom">Click Here To Watch The Video</a>
-      </div>
-    </div>
-    <div class="creator-profile">
-      <div class="profile">
-        <div class="creator-image">
-          <img src="img/autor.webp" alt="Pedro Álvares" width="96" height="96" />
-        </div>
-        <div>
-          <div class="creator-name">David Marcus | Fox News</div>
-          <div class="creator-info">Published September 22, 2024 9:55am EDT</div>
-        </div>
-      </div>
-    </div>
-    <hr class="line" />
-    <div class="social-icons-container">
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-linkedin-in"></i>
-    </div>
-    <hr class="line" />
-  </div>
-    <footer>
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="img/fox-news-logo-square.svg" alt="Logo Fox News" />
-        </div>
-        <div class="footer-links">
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
-            <li><a href="#email">Email Newsletters</a></li>
-            <li><a href="#cookie">Cookie Preferences</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-description">
-        <p>
-          Fox News is your trusted source for breaking news, expert analysis, and in-depth reporting on the most important stories across the U.S. and around the world.
-        </p>
-        <p>This website is not part of Google, Inc. or Google.com, nor is it sponsored or endorsed by Google. YouTube is a registered trademark of Google, Inc. Disclaimer: This site is provided for educational purposes only. Please consult a healthcare professional before implementing any strategies discussed on this website.</p>
-      </div>
-    </footer>
-    <script src="javascript.js"></script>
-  </body>
+      <footer>
+         <div class="footer-content">
+            <p>Copyright 2024 – All rights reserved</p>
+            <a href="terms.html">Terms of use</a> | <a href="privacy.html">Privacy Policy</a> | <a href="disclaimer.html">Disclaimer</a>
+            <p>This website is not part of Google, Inc. or Google.com, nor is it sponsored or endorsed by Google. YouTube is a registered trademark of Google, Inc.
+               Disclaimer: This site is provided for educational purposes only. Please consult a healthcare professional before implementing any strategies discussed on this website.
+            </p>
+         </div>
+      </footer>
+      <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+   </body>
 </html>
