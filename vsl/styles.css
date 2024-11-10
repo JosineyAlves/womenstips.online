@@ -185,10 +185,6 @@ footer {
         width: 95%;
     }
 
-    body {
-        padding-top: 20px;
-    }
-
     .references .images {
         flex-direction: column;
         align-items: center;
