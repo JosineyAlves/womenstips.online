@@ -10,7 +10,7 @@ body {
 }
 
 .background-section {
-    background-image: url('hero-banner.webp');
+    background-image: url('img/hero-banner.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
