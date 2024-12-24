@@ -8,33 +8,6 @@
     <title> Quick questions</title>
     <link rel="shortcut icon" href="survey1c.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://cdn.magicktracker.com/cm3i40j6500gprm44olvf3rf3.js"></script>
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '904507398449074');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=904507398449074&ev=PageView&noscript=1"
-      /></noscript>
-    <!-- End Meta Pixel Code -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPT8R3SHS3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-      
-        gtag('config', 'G-JPT8R3SHS3');
-    </script>
   </head>
   <body>
     <header>
@@ -126,7 +99,7 @@
                   <h2 style="text-align:center;">Do you avoid going out or eating certain foods because of your stomach?</h2>
                   <div class="answers" data-answer="checkbox">
                     <div class="answers__item answers__item--label-over">
-                      <input type="radio" value="Yes" name="Reason" id="Reason1">
+                      <input type="radio" value="Yes" name="Reason" id="Reason1" onclick="redirectToSite()">
                       <label for="Reason1" class="question-type-radio">
                         <div class="label__img">
                           <img class="lazyloaded" src="survey1c.png">
@@ -135,7 +108,7 @@
                       </label>
                     </div>
                     <div class="answers__item answers__item--label-over">
-                      <input type="radio" value="No" name="Reason" id="Reason2">
+                      <input type="radio" value="No" name="Reason" id="Reason2" onclick="redirectToSite()">
                       <label for="Reason2" class="question-type-radio">
                         <div class="label__img">
                           <img class=" ls-is-cached lazyloaded" src="survey1c.png">
@@ -144,7 +117,7 @@
                       </label>
                     </div>
                     <div class="answers__item answers__item--label-over">
-                      <input type="radio" value="No" name="Reason" id="Reason2">
+                      <input type="radio" value="No" name="Reason" id="Reason3" onclick="redirectToSite()">
                       <label for="Reason2" class="question-type-radio">
                         <div class="label__img">
                           <img class=" ls-is-cached lazyloaded" src="survey1c.png">
@@ -154,19 +127,18 @@
                     </div>
                   </div>
                 </div>
-                <p id="thanks">Thank you for answering. Watch the free tutorial to discover how to lose up to 2 lbs a day...</p>
-                <a href="https://track.magicktracker.site/866404404c8b" id="nextStep"
-                  class="btn hidden nextStep nextStep--solid  nextPageButton" role="button"> Watch
-                Tutorial Now </a>
               </div>
             </div>
+            <script>
+              function redirectToSite() {
+                window.location.href = "https://serenaflow.com/dtc";
+              }
+            </script>
           </form>
         </div>
       </section>
     </div>
     <footer class="footer">
-      <a href="https://track.magicktracker.site/866404404c8b" target="_self" class="btn skip  nextPageButton" role="button">Skip this
-      step</a>
     </footer>
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
