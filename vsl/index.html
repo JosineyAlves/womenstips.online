@@ -6,8 +6,8 @@
     <title>Health News</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Roboto:wght@400;500;600;700;800;900&amp;family=Montserrat:wght@400;500;600;700;800;900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
     <!-- Estilos CSS Otimizados -->
     <style>
       /* Box sizing */
@@ -28,8 +28,9 @@
       .header {
       background-color: #003366;
       color: white;
-      padding: 5px 15px;
+      padding: 10px 15px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       border-top: 4px solid #c20017;
@@ -140,7 +141,7 @@
       .headline {
       text-align: center;
       margin: 20px 0;
-      font-size: 28px;
+      font-size: 24px;
       color: #222;
       font-weight: 900;
       letter-spacing: -0.5px;
@@ -234,8 +235,10 @@
       justify-content: flex-end;
       }
       .footer-links ul li {
-      margin: 5px 10px;
-      }
+    margin-left: 15px;
+    padding: 5px 0;
+}
+
       .footer-description {
       text-align: center;
       }
