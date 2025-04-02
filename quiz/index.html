@@ -385,113 +385,128 @@
     <h2>ANÁLISE FINAL:</h2>
     <p>Seu diagnóstico aponta para uma série de problemas que estão afetando sua saúde sexual</p>
     <p>Você está em uma situação crítica e, se não tomar medidas imediatas, esses problemas podem se agravar, levando a consequências graves como disfunção erétil permanente, queda acentuada da libido e até a perda total de controle durante o sexo.</p>
-    <a href="https://naturallife.blog/vsl/" class="single-button">RECUPERE O SEU DESEMPENHO AGORA!</a>
+    <a href="https://naturallife.blog/vsl/" class="button">RECUPERE O SEU DESEMPENHO AGORA!</a>
     <h2><em>Confira a recomendação natural dos nossos especialistas</em></h2>
 </div>
            
     </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var currentStep = 1;
-            var maxSteps = 25;  // Ajuste para considerar todas as etapas
-    
-            function showNextStep() {
-                var currentQuiz = document.getElementById('quiz' + currentStep);
-                var nextQuiz = document.getElementById('quiz' + (currentStep + 1));
-    
-                if (currentQuiz && nextQuiz) {
-                    currentQuiz.style.display = 'none';
-                    nextQuiz.style.display = 'block';
-                    currentStep++;
-                    updateProgressBar();
-                    trackQuizProgress(currentStep);  // Rastreamento de evento
-                } else if (!nextQuiz && currentStep === maxSteps) {
-                    showModal();
-                }
-            }
-    
-            function trackQuizProgress(step) {
-                if (window.gtag) {
-                    gtag('event', 'quiz_progression', {
-                        'event_category': 'Quiz',
-                        'event_label': 'Step ' + step,
-                        'value': step
-                    });
-                }
-            }
-    
-            function updateProgressBar() {
-                var progressBar = document.getElementById('progress-bar');
-                var progressPercentage = (currentStep / maxSteps) * 100;
-                if (progressBar) progressBar.style.width = progressPercentage + '%';
-            }
-    
-            function showModal() {
-                var modal = document.getElementById('myModal');
-                var span = document.getElementsByClassName("close")[0];
-                modal.style.display = "block";
-                span.onclick = function() {
-                    modal.style.display = "none";
-                }
-                window.onclick = function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            }
-    
-            // Função para carregar etapa 24 e iniciar a animação da barra de progresso
-            function showLoadingStep() {
-                var currentQuiz = document.getElementById('quiz' + currentStep);
-                var loadingQuiz = document.getElementById('quiz24');
-    
-                if (currentQuiz) {
-                    currentQuiz.style.display = 'none';
-                }
-    
-                if (loadingQuiz) {
-                    loadingQuiz.style.display = 'block';
-                    currentStep++;
-                    updateProgressBar();
-    
-                    // Inicia a animação da barra de progresso
-                    var progressBar = document.getElementById('animated-progress-bar');
-                    progressBar.style.width = '0%'; // Reinicia a barra de progresso
-                    
-                    setTimeout(function() {
-                        progressBar.style.width = '100%';
-                    }, 100); // Inicia a transição
-    
-                    // Depois de 5 segundos, avançar para a próxima etapa (Etapa 25)
-                    setTimeout(function() {
-                        showNextStep();
-                    }, 5000);
-                }
-            }
-    
-            // Atualiza todos os links para avançar o quiz ao serem clicados
-            document.querySelectorAll('.quiz-option a').forEach(function(option) {
-                option.addEventListener('click', function() {
-                    showNextStep();
-                });
-            });
-    
-            // Adiciona funcionalidade a todos os botões únicos (ENTENDI!)
-            document.querySelectorAll('.single-button').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    if (currentStep === 23) {  // Se for a etapa 23, mostra a etapa de carregamento (24)
-                        showLoadingStep();
-                    } else {
-                        showNextStep();
-                    }
-                });
-            });
-    
-            updateProgressBar();  // Atualiza a barra de progresso inicialmente
-        });
-    </script>
-    
+    <script> 
+      document.addEventListener('DOMContentLoaded', function() {
+          var currentStep = 1;
+          var maxSteps = 25;  // Ajuste para considerar todas as etapas
+  
+          function showNextStep() {
+              var currentQuiz = document.getElementById('quiz' + currentStep);
+              var nextQuiz = document.getElementById('quiz' + (currentStep + 1));
+  
+              if (currentQuiz && nextQuiz) {
+                  currentQuiz.style.display = 'none';
+                  nextQuiz.style.display = 'block';
+                  currentStep++;
+                  updateProgressBar();
+                  trackQuizProgress(currentStep);  // Rastreamento de evento
+              } else if (!nextQuiz && currentStep === maxSteps) {
+                  showModal();
+              }
+          }
+  
+          function trackQuizProgress(step) {
+              if (window.gtag) {
+                  gtag('event', 'quiz_progression', {
+                      'event_category': 'Quiz',
+                      'event_label': 'Step ' + step,
+                      'value': step
+                  });
+              }
+          }
+  
+          function updateProgressBar() {
+              var progressBar = document.getElementById('progress-bar');
+              var progressPercentage = (currentStep / maxSteps) * 100;
+              if (progressBar) progressBar.style.width = progressPercentage + '%';
+          }
+  
+          function showModal() {
+              var modal = document.getElementById('myModal');
+              var span = document.getElementsByClassName("close")[0];
+              modal.style.display = "block";
+              span.onclick = function() {
+                  modal.style.display = "none";
+              }
+              window.onclick = function(event) {
+                  if (event.target === modal) {
+                      modal.style.display = "none";
+                  }
+              }
+          }
+  
+          // Função para carregar etapa 24 e iniciar a animação da barra de progresso
+          function showLoadingStep() {
+              var currentQuiz = document.getElementById('quiz' + currentStep);
+              var loadingQuiz = document.getElementById('quiz24');
+  
+              if (currentQuiz) {
+                  currentQuiz.style.display = 'none';
+              }
+  
+              if (loadingQuiz) {
+                  loadingQuiz.style.display = 'block';
+                  currentStep++;
+                  updateProgressBar();
+  
+                  // Inicia a animação da barra de progresso
+                  var progressBar = document.getElementById('animated-progress-bar');
+                  var progressText = document.getElementById('progress-text');
+                  var loadingDuration = 5000; // Duração de 5 segundos para completar
+                  var startTime = Date.now();
+  
+                  progressBar.style.width = '0%';
+                  progressText.innerText = '0%';
+  
+                  function animateProgress() {
+                      var elapsedTime = Date.now() - startTime;
+                      var progressPercentage = (elapsedTime / loadingDuration) * 100;
+  
+                      if (progressPercentage >= 100) {
+                          progressPercentage = 100;
+                          progressBar.style.width = '100%';
+                          progressText.innerText = '100%';
+                          showNextStep();
+                          return; // Para a animação quando completa
+                      }
+  
+                      progressBar.style.width = progressPercentage + '%';
+                      progressText.innerText = Math.floor(progressPercentage) + '%';
+  
+                      requestAnimationFrame(animateProgress); // Requisição contínua para animação suave
+                  }
+  
+                  requestAnimationFrame(animateProgress); // Inicia a animação
+              }
+          }
+  
+          // Atualiza todos os links para avançar o quiz ao serem clicados
+          document.querySelectorAll('.quiz-option a').forEach(function(option) {
+              option.addEventListener('click', function() {
+                  showNextStep();
+              });
+          });
+  
+          // Adiciona funcionalidade a todos os botões únicos (ENTENDI!)
+          document.querySelectorAll('.single-button').forEach(function(button) {
+              button.addEventListener('click', function() {
+                  if (currentStep === 23) {  // Se for a etapa 23, mostra a etapa de carregamento (24)
+                      showLoadingStep();
+                  } else {
+                      showNextStep();
+                  }
+              });
+          });
+  
+          updateProgressBar();  // Atualiza a barra de progresso inicialmente
+      });
+</script>
      
   </body>
 </html>
