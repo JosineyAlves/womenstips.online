@@ -82,7 +82,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: auto;
     font-size: 18px;
     font-weight: 500;
 }
@@ -322,4 +322,58 @@ a {
     font-size: 20px;
     font-weight: bold;
 }
+.privacy-warning {
+    font-size: 14px;
+    color: #001c22;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* Footer Estilo */ 
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    text-align: center;
+    color: #004c5e;
+}
+
+/* Container do Footer */
+.footer-container {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza todo o conteúdo */
+    gap: 10px;
+}
+
+/* Links do Footer */
+.footer-links {
+    display: flex; /* Alinha os links horizontalmente */
+    gap: 10px;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Links específicos do Footer para evitar conflito */
+.footer .footer-links a {
+    color: #004c5e !important; /* Sobrescreve o CSS global */
+    text-decoration: none;
+    font-size: 14px;
+    display: inline; /* Remove o display: flex que está aplicado globalmente */
+    font-weight: normal; /* Remove o peso extra */
+}
+
+
+/* Parágrafo do Footer */
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
