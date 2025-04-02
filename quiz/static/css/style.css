@@ -78,7 +78,7 @@ li:hover {
 
 a {
     text-decoration: none;
-    color: #323653;
+    color: #00262e;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -121,21 +121,47 @@ a {
 .button {
     background-color: #004c5e;
     color: white;
-    padding: 15px 0 15px 0;
-    border-radius: 4px;
+    padding: 15px 30px;
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
     font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Efeito de hover */
 .button:hover {
     background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
+
+/* Efeito de pulsação contínua */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 76, 94, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 76, 94, 0.7);
+    }
+}
+
+.button {
+    animation: pulse 2s infinite;
+}
+
 .selection-circle { 
-    height: 16px;
-    width: 16px;
+    height: 15px;
+    width: 15px;
     background-color: transparent;
     border-radius: 100%;
     border: 3px solid #004c5e;
@@ -154,7 +180,6 @@ a {
 /* Estilo do botão único */
 .single-button {
     background-color: #004c5e;
-    border: 2px solid #98A4FF;
     border-radius: 15px;
     padding: 15px 0;
     font-size: 20px;
@@ -171,7 +196,7 @@ a {
 
 .single-button:hover {
     background-color: #004c5e;
-    border-color: #004c5e;
+    border-color: #001c22;
 }
 /* Container da Imagem */
 .image-container {
@@ -204,7 +229,7 @@ a {
 
 .paragraph-list p:hover {
     background-color: #EDEFFC;
-    border-color: #98A4FF;
+    border-color: #001c22;
 }
 
 /* Estilo do ícone de check */
