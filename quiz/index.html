@@ -405,7 +405,7 @@
                   nextQuiz.style.display = 'block';
                   currentStep++;
                   updateProgressBar();
-                  trackQuizProgress(currentStep);  // Rastreamento de evento
+                  trackQuizProgress(currentStep);
               } else if (!nextQuiz && currentStep === maxSteps) {
                   showModal();
               }
@@ -441,7 +441,6 @@
               }
           }
   
-          // Função para carregar etapa 24 e iniciar a animação da barra de progresso
           function showLoadingStep() {
               var currentQuiz = document.getElementById('quiz' + currentStep);
               var loadingQuiz = document.getElementById('quiz24');
@@ -455,48 +454,48 @@
                   currentStep++;
                   updateProgressBar();
   
-                  // Inicia a animação da barra de progresso
                   var progressBar = document.getElementById('animated-progress-bar');
                   var progressText = document.getElementById('progress-text');
-                  var loadingDuration = 5000; // Duração de 5 segundos para completar
-                  var startTime = Date.now();
+                  var loadingDuration = 5000; // Duração de 5 segundos
+                  var startTime = performance.now(); // Usa performance.now() para maior precisão
   
                   progressBar.style.width = '0%';
                   progressText.innerText = '0%';
   
-                  function animateProgress() {
-                      var elapsedTime = Date.now() - startTime;
-                      var progressPercentage = (elapsedTime / loadingDuration) * 100;
-  
-                      if (progressPercentage >= 100) {
-                          progressPercentage = 100;
+                  function animateProgress(currentTime) {
+                      var elapsedTime = currentTime - startTime;
+                      var progress = (elapsedTime / loadingDuration) * 100;
+
+                      if (progress >= 100) {
+                          progress = 100;
                           progressBar.style.width = '100%';
-                          progressText.innerText = '100%';
-                          showNextStep();
-                          return; // Para a animação quando completa
+                          progressText.innerText = 'Concluído';
+
+                          // Aguarda 1 segundo antes de avançar para a próxima etapa
+                          setTimeout(showNextStep, 1000);
+                          return;
                       }
   
-                      progressBar.style.width = progressPercentage + '%';
-                      progressText.innerText = Math.floor(progressPercentage) + '%';
-  
-                      requestAnimationFrame(animateProgress); // Requisição contínua para animação suave
+                      // Atualiza a largura da barra de progresso e o texto da porcentagem
+                      progressBar.style.width = progress + '%';
+                      progressText.innerText = Math.floor(progress) + '%';
+
+                      requestAnimationFrame(animateProgress); // Continua a animação
                   }
   
-                  requestAnimationFrame(animateProgress); // Inicia a animação
+                  requestAnimationFrame(animateProgress);
               }
           }
   
-          // Atualiza todos os links para avançar o quiz ao serem clicados
           document.querySelectorAll('.quiz-option a').forEach(function(option) {
               option.addEventListener('click', function() {
                   showNextStep();
               });
           });
   
-          // Adiciona funcionalidade a todos os botões únicos (ENTENDI!)
           document.querySelectorAll('.single-button').forEach(function(button) {
               button.addEventListener('click', function() {
-                  if (currentStep === 23) {  // Se for a etapa 23, mostra a etapa de carregamento (24)
+                  if (currentStep === 23) {  // Inicia a barra de progresso na etapa 24
                       showLoadingStep();
                   } else {
                       showNextStep();
@@ -506,7 +505,7 @@
   
           updateProgressBar();  // Atualiza a barra de progresso inicialmente
       });
-</script>
+</script> 
      
   </body>
 </html>
