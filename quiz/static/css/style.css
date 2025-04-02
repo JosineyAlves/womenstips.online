@@ -223,7 +223,7 @@ a {
     background-color: white;
     border-radius: 15px;
     padding: 30px;
-    width: 500px;
+    width: auto;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
