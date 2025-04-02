@@ -16,18 +16,19 @@ body {
     width: 100%;
     max-width: 500px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 .container p{
     font-size: 18px ;
     font-weight: 400;
+    text-align: center;
 }
 
 /* Centraliza o logo */
 .logo-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* Estilo do logotipo */
@@ -42,6 +43,13 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
     font-weight: 800;
+    text-transform:uppercase
+}
+h3 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 800;
+    text-transform:uppercase
 }
 
 ul {
@@ -75,7 +83,7 @@ a {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -125,16 +133,17 @@ a {
 .button:hover {
     background-color: #45a049;
 }
-.selection-circle {
+.selection-circle { 
     height: 18px;
     width: 18px;
-    background-color: transparent; /* Fundo transparente */
-    border-radius: 50%; /* Forma circular */
-    border: 2px solid #004c5e; /* Borda sólida com cor */
-    display: inline-block; /* Mantém o círculo alinhado com o texto */
-    margin-right: 10px; /* Espaçamento à direita para separar do texto */
-    vertical-align: middle; /* Alinha verticalmente com o texto */
-    transition: background-color 0.3s, border-color 0.3s; /* Transição suave para mudanças de estado */
+    background-color: transparent;
+    border-radius: 100%;
+    border: 4px solid #004c5e;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: background-color 0.3s, border-color 0.3s;
+    flex-shrink: 0; /* Evita que o círculo se deforme */
 }
 
 /* Estilos para quando a opção é selecionada (gerenciado pelo JavaScript) */
@@ -189,7 +198,8 @@ a {
     align-items: center;
     border: 2px solid transparent;
     transition: background-color 0.4s, border-color 0.4s;
-    cursor: pointer;
+    font-size: 18px;
+    
 }
 
 .paragraph-list p:hover {
@@ -200,10 +210,10 @@ a {
 /* Estilo do ícone de check */
 .check-icon {
     margin-right: 10px;
-    color: #4CAF50; /* Cor verde para o ícone */
 }
-/* Container da barra de progresso animada */
+/* Container da barra de progresso */
 .progress-bar-container {
+    position: relative;
     width: 100%;
     background-color: #ddd;
     border-radius: 10px;
@@ -212,57 +222,73 @@ a {
     overflow: hidden;
 }
 
-/* Barra de progresso animada */
+/* Barra de Progresso Animada */
 .progress-bar-animated {
     height: 100%;
-    width: 0;
-    background-color: #66BB6A; /* Cor verde */
-    transition: width 3s linear; /* Controla a duração da animação */
+    width: 0%;
+    background-color: #66BB6A;
+    transition: width 10s linear; /* Tornando a animação mais lenta */
 }
+
+/* Texto de Progresso */
+.progress-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #004c5e;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+}
+
 .result-container {
     background-color: white;
     border-radius: 15px;
-    padding: 30px;
-    width: auto;
-    text-align: center;
+    padding: 20px;
+    width: 500px;
+    text-align: left;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-/* Ícones */
-.result-icon {
-    width: 80px;
-    height: 80px;
-}
-
-/* Estilo Geral dos Títulos */
-.result-title {
-    font-size: 24px;
+/* Flexbox Container */
+.result-header {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-/* Bloco 1 - Azul */
-.bloco-1 .result-title {
-    color: #3B48EE;
+/* Ícone */
+.result-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
 }
 
-/* Bloco 2 - Verde */
-.bloco-2 .result-title {
-    color: #28A745;
+/* Título e Score Container */
+.title-score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-/* Bloco 3 - Vermelho */
-.bloco-3 .result-title {
-    color: #DC3545;
+/* Título Principal */
+.result-title {
+    font-size: 30px;
+    margin-right: 15px;
 }
 
-/* Bloco 4 - Laranja */
-.bloco-4 .result-title {
-    color: #FF8C00;
-}
+/* Estilo por bloco */
+.bloco-1 .result-title { color: #3B48EE; }
+.bloco-2 .result-title { color: #FF5733; }
+.bloco-3 .result-title { color: #FFC300; }
+.bloco-4 .result-title { color: #28A745; }
 
 /* Nota */
 .result-score {
-    font-size: 32px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
 }
+
