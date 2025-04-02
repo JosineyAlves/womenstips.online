@@ -138,7 +138,7 @@ a {
     position: relative;
     overflow: hidden;
     width: auto; /* Define uma largura fixa para evitar que o botão extrapole */
-    max-width: 100%; /* Garante que o botão nunca ultrapasse o contêiner */
+    max-width: 80%; /* Garante que o botão nunca ultrapasse o contêiner */
 }
 
 /* Efeito de hover */
