@@ -220,3 +220,73 @@ img {
     color: #004c5e;
     font-weight: 700;
 }
+/* Bloco de Oferta */
+.offer-block {
+    max-width: 350px;      /* Largura máxima do bloco */
+    margin: 20px auto;     /* Centraliza horizontalmente e espaça verticalmente */
+    border-radius: 10px;
+    overflow: hidden;      /* Garante que o topo arredondado apareça */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #222222; /* Fundo escuro */
+    color: #ffffff;        /* Texto branco */
+    text-align: center;    /* Centraliza textos */
+  }
+  
+  .offer-header {
+    background-color: #FFCE00; /* Barra superior amarela */
+    color: #222222;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .offer-body {
+    padding: 20px;
+  }
+  
+  /* Preço antigo */
+  .old-price {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #cccccc; /* Cinza claro */
+  }
+  
+  /* Preço atual em destaque */
+  .current-price {
+    font-size: 32px;
+    margin: 5px 0;
+    color: #ffffff; /* Texto branco sobre fundo escuro */
+  }
+  
+  /* Parcelas */
+  .installments {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #cccccc; 
+  }
+  
+  /* Botão de Ação */
+  .offer-button {
+    display: inline-block;
+    background-color: #127212;  /* Verde para destaque do botão */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s;
+  }
+  
+  .offer-button:hover {
+    background-color: #009900; /* Efeito hover ligeiramente mais escuro */
+  }
+  
+  /* Texto de Aviso */
+  .offer-disclaimer {
+    font-size: 12px;
+    color: #cccccc;
+    margin-top: 20px;
+  }
+  
