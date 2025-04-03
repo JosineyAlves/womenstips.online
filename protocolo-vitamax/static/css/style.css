@@ -1,0 +1,231 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F6F8;
+    color: #004c5e;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Ajuste global de imagens */
+img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Estilo do Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #004c5e;
+    color: white;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Bloco: Ejaculação Precoce */
+.ejaculacao-precoce-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #D8D8D8;
+}
+
+.logo-section img {
+    /* Como o img global já possui max-width: 800px, aqui podemos diminuir se quisermos.
+       Exemplo: max-width: 200px;  Se você quiser, pode ajustar. */
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
+.text-section h3 {
+    font-size: 16px;
+    color: #004c5e;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.text-section h1 {
+    font-size: 20px;
+    color: #1A73E8;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.chart-section img {
+    /* Mantém a regra global: max-width: 800px; width:100%; */
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.highlight-section {
+    background-color: #E0F7FA;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.highlight-section p {
+    font-size: 14px;
+    color: #004c5e;
+}
+
+/* Bloco do Protocolo Duramax */
+.bloco-duramax {
+    background-color: #F5F6F8;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.duramax-header {
+    background-color: #1a1a2e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.duramax-info p {
+    color: white;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.duramax-stats {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.duramax-body h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background: linear-gradient(to right, #FFCE00 0%, #FFA500 100%);    
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-blue {
+    color: #0056b3;
+}
+
+.duramax-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.duramax-images div {
+    text-align: center;
+}
+
+.duramax-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+/* Bloco de Comparativo Antes e Depois */
+.comparison-block {
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.comparison-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.comparison-title {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.before {
+    background-color: #FFDDDD;
+    color: #FF6B6B;
+}
+
+.after {
+    background-color: #DFFFD6;
+    color: #28A745;
+}
+
+.comparison-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comparison-column {
+    width: 48%;
+}
+
+.comparison-item {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 6px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+/* Cards Gerais */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Destaque dentro dos Cards */
+.card-content .highlight {
+    color: #28A745;
+    font-weight: 700;
+}
