@@ -80,6 +80,16 @@ img {
     border-radius: 10px;
     margin: 15px 0;
 }
+.chart-section {
+    text-align: center;
+  }
+  
+  .chart {
+    display: inline-block; /* Garante que a imagem seja tratada como elemento inline */
+    max-width: auto;
+    height: auto;
+  }
+  
 
 .highlight-section {
     background-color: #E0F7FA;
@@ -91,15 +101,6 @@ img {
 .highlight-section p {
     font-size: 14px;
     color: #004c5e;
-}
-
-/* Bloco do Protocolo Duramax */
-.bloco-duramax {
-    background-color: #F5F6F8;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-top: 20px;
 }
 
 .duramax-header {
@@ -158,50 +159,40 @@ img {
 .comparison-block {
     background-color: #F9F9F9;
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
     margin: 20px 0;
-}
-
-.comparison-header {
+  }
+  
+  /* Organiza as colunas lado a lado */
+  .comparison-content {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 10px;
-}
-
-.comparison-title {
+    gap: 20px; /* Espaço horizontal entre as colunas */
+  }
+  
+  /* Cada coluna */
+  .comparison-column {
+    width: 48%;
+    text-align: center; /* Centraliza conteúdo se desejar */
+  }
+  
+  /* Títulos “Antes” e “Depois” */
+  .comparison-title {
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 8px;
-}
-
-.before {
-    background-color: #FFDDDD;
+    margin-bottom: 10px; /* Espaço entre o título e a imagem */
+    font-size: 16px;
+  }
+  
+  .before {
     color: #FF6B6B;
-}
-
-.after {
-    background-color: #DFFFD6;
+  }
+  
+  .after {
     color: #28A745;
-}
-
-.comparison-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.comparison-column {
-    width: 48%;
-}
-
-.comparison-item {
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    height: 6px;
-    border-radius: 4px;
-    margin: 5px 0;
-}
+  }
+  
 
 /* Cards Gerais */
 .card {
@@ -226,6 +217,6 @@ img {
 
 /* Destaque dentro dos Cards */
 .card-content .highlight {
-    color: #28A745;
+    color: #004c5e;
     font-weight: 700;
 }
