@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F5F6F8;
+    background-color: white;
     color: #004c5e;
 }
 
@@ -11,6 +11,11 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 20px;
+}
+.container P{
+  font-size:16px;
+  line-height: 1.6;
+
 }
 
 /* Ajuste global de imagens */
@@ -41,25 +46,25 @@ img {
 .ejaculacao-precoce-container {
     background-color: white;
     border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 5px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #D8D8D8;
+    margin-bottom: 50px;
+
 }
 
 .logo-section img {
     /* Como o img global já possui max-width: 800px, aqui podemos diminuir se quisermos.
        Exemplo: max-width: 200px;  Se você quiser, pode ajustar. */
-    max-width: 250px;
-    margin-bottom: 10px;
+    max-width: 300px;
 }
 
 .text-section h3 {
     font-size: 16px;
     color: #004c5e;
     text-transform: uppercase;
-    margin-bottom: 0px;
+    margin-bottom: -10px;
+    font-weight: 100;
+
 }
 
 .text-section h1 {
@@ -71,8 +76,8 @@ img {
 
 .text-section p {
     font-size: 16px;
-    color: #333;
-    line-height: 1.5;
+    color: #004c5e;
+    line-height: 1.4;
 }
 
 .chart-section img {
@@ -91,64 +96,125 @@ img {
   }
   
 
+/* Contêiner principal (seu fundo, borda etc.) */
 .highlight-section {
-    background-color: #E0F7FA;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
+  background-color: #E0F7FA;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
-.highlight-section p {
-    font-size: 14px;
-    color: #004c5e;
+/* Contêiner que organiza o “90%” e o texto em linha */
+.highlight-row {
+  display: flex;         /* Usa Flexbox */
+  align-items: center;   /* Alinha verticalmente ao centro */
+  gap: 10px;             /* Espaçamento horizontal */
 }
 
-.duramax-header {
-    background-color: #1a1a2e;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+/* Bloco esquerdo - apenas “90%” */
+.highlight-left {
+  font-size: 2em;        /* Ajuste conforme desejar */
+  font-weight: bold;
+  color: #004c5e;
+  line-height: 1;        /* Para evitar espaçamento vertical extra */
 }
 
-.duramax-info p {
-    color: white;
-    margin: 0 0 10px 0;
-    font-size: 20px;
-    text-align: center;
+/* Bloco direito - texto normal */
+.highlight-right p {
+  margin: 0;             /* Remove espaçamento extra */
+  font-size: 14px;       /* Ajuste conforme desejar */
+  line-height: 1.0;
+  text-align: left;
 }
 
-.duramax-stats {
-    display: flex;
-    justify-content: space-evenly;
-    color: white;
+
+/* Estilizando o bloco Protocolo vitamax de acordo com a imagem */
+
+/* Bloco Principal - Fundo Escuro */
+.bloco-vitamax {
+  background-color: #1A1A2E; /* Fundo escuro */
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;   /* Centraliza textos e elementos */
+  border-radius: 10px;  /* Suaviza cantos */
+  margin: 20px 0;       /* Espaçamento vertical */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+/* PROTOCOLO menor, com font-weight menor */
+.special-heading {
+  margin-bottom: 50px;
 }
 
-.duramax-body h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
+.proto-lower {
+  font-size: 36px;    /* Ajuste conforme necessário */
+  font-weight: 400;   /* Peso do texto menor */
+  text-transform: uppercase; /* Se quiser manter tudo em maiúsculo */
+}
+
+/* VITAMAX maior, com font-weight maior */
+.proto-bigger {
+  font-size: 50px;    /* Ajuste conforme necessário */
+  font-weight: 900;   /* Peso do texto maior */
+  text-transform: uppercase; /* Se quiser manter tudo em maiúsculo */
+  line-height: 0.9;
+}
+
+/* Texto superior */
+.vitamax-info p {
+  margin: 0 0 15px;
+  font-size: 16px;
+  color: #cccccc;  /* Tom de cinza para destaque */
+}
+
+/* Container das estatísticas (4.7 Avaliação, 10k+ Usuários, etc.) */
+.vitamax-stats {
+  display: flex;           /* Deixa os itens lado a lado */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 20px;               /* Espaço entre cada estatística */
+}
+
+/* Cada estatística */
+.vitamax-stats div {
+  background-color: #2C2C44;   /* Fundo ligeiramente mais claro que o bloco */
+  border-radius: 20px;        /* Formato “pilula” */
+  padding: 5px 5px;         /* Espaço interno */
+  min-width: 90px;            /* Largura mínima para evitar encolher demais */
+  text-align: center;         /* Centraliza texto */
+  font-size: 14px;            /* Tamanho do texto */
+  color: #ffffff;             /* Cor do texto branca */
+}
+
+/* Destaque para o valor em negrito */
+.vitamax-stats div strong {
+  display: block;       /* Força quebra de linha */
+  font-size: 18px;      /* Tamanho maior para chamar atenção */
+  margin-bottom: 3px;   /* Espaçamento abaixo do valor */
+  color: #FFFFFF;       /* Cor do texto branca */
 }
 
 .highlight {
     background: linear-gradient(to right, #FFCE00 0%, #FFA500 100%);    
     padding: 2px 4px;
     border-radius: 4px;
+
 }
 
 .highlight-blue {
     color: #0056b3;
 }
 
-.duramax-images {
+.vitamax-images {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.duramax-images div {
+.vitamax-images div {
     text-align: center;
 }
 
-.duramax-images img {
+.vitamax-images img {
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -198,9 +264,7 @@ img {
 .card {
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 .card-title {
@@ -211,9 +275,35 @@ img {
 }
 
 .card-content {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.0;
 }
+.offer-list {
+  list-style: none;   /* Remove marcadores padrões */
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada item com fundo e espaçamento */
+.offer-list li {
+  background-color: #EDEFFC; /* Exemplo de cor de fundo */
+  margin: 10px 0;           /* Espaçamento vertical entre itens */
+  padding: 10px 5px;       /* Espaço interno */
+  border-radius: 8px;       /* Bordas arredondadas */
+  display: flex;
+  align-items: center;         /* Alinha ícone e texto verticalmente */
+  justify-content: flex-start; /* Alinha tudo à esquerda */
+  text-align: left;     
+}
+
+/* Ícone de cada li */
+.li-icon {
+  width: 50px;        /* Ajuste conforme desejar */
+  height: autopx;
+  margin-right: 10px; /* Espaço entre ícone e texto */
+  flex-shrink: 0;     /* Para evitar que o ícone seja redimensionado */
+}
+
 
 /* Destaque dentro dos Cards */
 .card-content .highlight {
@@ -230,6 +320,7 @@ img {
     background-color: #222222; /* Fundo escuro */
     color: #ffffff;        /* Texto branco */
     text-align: center;    /* Centraliza textos */
+    margin-bottom: 50px;
   }
   
   .offer-header {
@@ -289,4 +380,112 @@ img {
     color: #cccccc;
     margin-top: 20px;
   }
+  /* Estilos do contêiner do carrossel (card de depoimentos) */
+.testimonial-carousel {
+  margin: 2rem auto;              /* centraliza horizontalmente e adiciona espaçamento vertical */
+  padding: 1rem;
+  background-color: #FFF;         /* fundo branco (ou cinza claro, conforme necessidade) */
+  border-radius: 8px;            /* cantos arredondados do card */
+  font-family: 'Montserrat', sans-serif;  /* fonte Montserrat */
+  color: #002D62;                /* texto em azul escuro (ajuste para o tom exato da identidade) */
+  text-align: left;            /* centraliza o título e (por herança) os conteúdos */
+}
+
+/* Contêiner dos slides (pode ser usado para posicionamento relativo, se necessário) */
+.testimonial-slides {
+  position: relative;
+}
+
+/* Cada slide de depoimento - inicialmente todos escondidos */
+.testimonial-slide {
+  display: none;
+}
+
+/* Slide ativo/visível */
+.testimonial-slide.active {
+  display: block;
+}
+
+/* Imagens dos depoimentos */
+.testimonial-slide img {
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;            /* cantos arredondados da imagem */
+}
+/* FAQ Section Geral */
+.faq-section {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #004c5e;
+}
+
+.faq-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Container dos itens de FAQ */
+.faq-container {
+  background-color: #ffffff;
+  border: 2px solid #D8D8D8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* se quisermos cortar animação, ajustamos de outra forma */
+}
+
+/* Cada bloco FAQ Item */
+.faq-item + .faq-item {
+  border-top: 1px solid #EDEDED; /* Linha entre perguntas */
+}
+
+/* Botão da Pergunta */
+.faq-question {
+  background-color: #F5F6F8;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 20px;
+  cursor: pointer;
+  color: #004c5e;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between; /* Se quiser ícone + texto */
+  align-items: center;           /* Alinhar verticalmente se tiver ícone */
+}
+
+.faq-question:hover {
+  background-color: #EDEFFC;
+}
+
+/* Container da Resposta */
+.faq-answer {
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
   
+  /* Para a animação da altura */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 20px;
+}
+
+/* Texto de dentro */
+.faq-answer p {
+  margin: 15px 0;
+}
+
+/* Quando estiver ativo (JS adiciona essa classe) */
+.faq-item.active .faq-answer {
+  max-height: 800px; /* Ajuste conforme o tamanho do texto */
+  padding: 15px 20px; /* Só é exibido quando ativo */
+}
