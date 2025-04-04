@@ -26,9 +26,10 @@ img {
 .footer {
   text-align: center;
   margin-top: 40px;
-  padding: 20px;
-  background-color: #004c5e;
+  padding: 10px;
+  background-color: #1A1A2E;
   color: white;
+  font-size: 12px;
 }
 
 .footer-links a {
@@ -441,7 +442,7 @@ img {
 
 .offer-button {
   display: inline-block;
-  background-color: #127212;  
+  background-color: #19A74B;  
   color: #ffffff;
   text-decoration: none;
   padding: 15px 25px;
@@ -452,7 +453,7 @@ img {
 }
 
 .offer-button:hover {
-  background-color: #009900; 
+  background-color: #0E7A34; 
 }
 
 .offer-disclaimer {
@@ -560,4 +561,84 @@ img {
 .faq-item.active .faq-answer {
   max-height: 800px; 
   padding: 15px 20px; 
+}
+/* Container principal do bloco de oferta */
+.offer-inline-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2C2C44;  /* Fundo escuro */
+  border-radius: 50px;        /* Bordas bem arredondadas */
+  padding: 10px 20px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: fit-content; 
+}
+
+/* Tornando o bloco flutuante (ajuste se já tem esse CSS) */
+.floating-offer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+/* Container da parte de preços */
+.offer-inline-left {
+  flex-direction: column; /* Agora as duas linhas ficam empilhadas (vertical) */
+  align-items: flex-start; /* Alinhar o texto à esquerda */
+  margin-right: 15px; /* Espaço entre o preço e o botão */
+  text-align: center;
+}
+
+/* Linha de cima: “De R$69,90 por” */
+.offer-line1 {
+  font-size: 14px;
+  font-weight: 500;
+  gap: 3px;
+
+}
+
+/* Linha de baixo: “R$29,90” */
+.offer-line2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+/* Texto “De”, “por” com leve transparência (opcional) */
+.offer-prefix {
+  opacity: 0.8;
+}
+
+/* Valor antigo em vermelho, riscado */
+.offer-old-value {
+  color: #f74545;
+  text-decoration: line-through;
+}
+
+/* Valor novo (já define em .offer-line2) 
+.offer-new-value {
+  color: #ffffff;
+} */
+
+/* Botão verde */
+.offer-inline-button {
+  display: inline-block;
+  background-color: #19A74B; 
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px; 
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.offer-inline-button:hover {
+  background-color: #0E7A34;
 }
