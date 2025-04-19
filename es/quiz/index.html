@@ -1,337 +1,344 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnóstico Personalizado - Instituto Vitamax</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <div class="logo-container">
-        <img src="static/images/logo.png" alt="Instituto Vitamax" class="logo">
-      </div>
-      <div class="progress-container">
-        <div class="progress-bar" id="progress-bar" style="width: 20%;"></div>
-      </div>
-    <!-- ---------- PASO 1 ---------- -->
-    <div id="quiz1" class="quiz-container">
-      <h2>¿CUÁNTOS AÑOS TIENES?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>18 – 29 años</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>30 – 39 años</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>40 – 49 años</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>50 – 59 años</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>+60 años</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico Personalizado · Instituto Vitamax</title>
+
+  <!-- Fontes + CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- Logo + progresso -->
+  <div class="logo-container">
+    <img src="static/images/logo.png" alt="Instituto Vitamax" class="logo">
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <!-- ================== QUIZ PASOS 1 – 25 ================== -->
+
+  <!-- ---------- PASO 1 ---------- -->
+  <div id="quiz1" class="quiz-container">
+    <h2>¿CUÁNTOS AÑOS TIENES?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>18 – 29 años</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>30 – 39 años</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>40 – 49 años</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>50 – 59 años</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>+60 años</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 2 ---------- -->
+  <div id="quiz2" class="quiz-container" style="display:none">
+    <h2>¿Has entrenado los músculos del suelo pélvico?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, pero no de forma constante</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No, solo lo he escuchado</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No, nunca los he entrenado</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>¿Qué son los músculos del suelo pélvico?</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 3 ---------- -->
+  <div id="quiz3" class="quiz-container" style="display:none">
+    <h3>¿LO SABÍAS?</h3>
+    <h2>¡Tu capacidad de durar más depende del fortalecimiento de los músculos del suelo pélvico!</h2>
+    <p>La duración de tu relación sexual está directamente ligada a la fuerza de estos músculos. Fortalecerlos es esencial para retrasar la eyaculación y prolongar el tiempo en la cama a tu gusto.</p>
+
+    <div class="image-container">
+      <img src="static/images/fluxo.png" alt="Ilustración" class="quiz-image">
     </div>
 
-    <!-- ---------- PASO 2 ---------- -->
-    <div id="quiz2" class="quiz-container" style="display:none">
-      <h2>¿Has entrenado los músculos del suelo pélvico?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, pero no de forma constante</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No, solo lo he escuchado</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No, nunca los he entrenado</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>¿Qué son los músculos del suelo pélvico?</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 4 ---------- -->
+  <div id="quiz4" class="quiz-container" style="display:none">
+    <h3>¿LO SABÍAS?</h3>
+    <h2>Erecciones más fuertes gracias al suelo pélvico</h2>
+    <p>Un suelo pélvico fortalecido es clave para una erección saludable. Al aprender a controlarlo, aumentas el flujo sanguíneo al pene y mejoran las erecciones.</p>
+
+    <div class="image-container">
+      <img src="static/images/assoalho-pelvico.png" alt="Ilustración" class="quiz-image">
     </div>
 
-    <!-- ---------- PASO 3 ---------- -->
-    <div id="quiz3" class="quiz-container" style="display:none">
-      <h3>¿LO SABÍAS?</h3>
-      <h2>¡Tu capacidad de durar más depende del fortalecimiento de los músculos del suelo pélvico!</h2>
-      <p>La duración de tu relación sexual está directamente ligada a la fuerza de estos músculos. Fortalecerlos es esencial para retrasar la eyaculación y prolongar el tiempo en la cama a tu gusto.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
 
-      <div class="image-container">
-        <img src="static/images/fluxo.png" alt="Ilustración" class="quiz-image" />
-      </div>
+  <!-- ---------- PASO 5 ---------- -->
+  <div id="quiz5" class="quiz-container" style="display:none">
+    <h2>¿Cómo calificarías tu desempeño sexual?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Muy insatisfecho</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Insatisfecho</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Aceptable, pero quiero mejorar</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No lo sé</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
 
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  <!-- ---------- PASO 6 ---------- -->
+  <div id="quiz6" class="quiz-container" style="display:none">
+    <h2>Lleva tu vida sexual a un nuevo nivel con el Protocolo Vitamax</h2>
+    <p>Primera fase del diagnóstico:</p>
+
+    <div class="image-container">
+      <img src="static/images/nivel.png" alt="Ilustración" class="quiz-image">
     </div>
 
-    <!-- ---------- PASO 4 ---------- -->
-    <div id="quiz4" class="quiz-container" style="display:none">
-      <h3>¿LO SABÍAS?</h3>
-      <h2>Erecciones más fuertes gracias al suelo pélvico</h2>
-      <p>Un suelo pélvico fortalecido es clave para una erección saludable. Al aprender a controlarlo, aumentas el flujo sanguíneo al pene y mejoran las erecciones.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
 
-      <div class="image-container">
-        <img src="static/images/assoalho-pelvico.png" alt="Ilustración" class="quiz-image" />
-      </div>
+  <!-- ---------- PASO 7 ---------- -->
+  <div id="quiz7" class="quiz-container" style="display:none">
+    <h2>¿Cuál es la duración promedio de tus relaciones sexuales?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Menos de 2 minutos</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>2 a 5 minutos</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Menos de 10 minutos</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No tengo relaciones sexuales</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
 
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  <!-- ---------- PASO 8 ---------- -->
+  <div id="quiz8" class="quiz-container" style="display:none">
+    <h2>¿Con qué frecuencia terminas antes de lo que quisieras?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Siempre</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>A veces</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Prefiero no responder</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 9 ---------- -->
+  <div id="quiz9" class="quiz-container" style="display:none">
+    <h3>EL PROTOCOLO VITAMAX</h3>
+    <h2>AYUDA A AUMENTAR LA DURACIÓN PROMEDIO HASTA 7 VECES</h2>
+    <p>Este método ha ayudado a miles de hombres a prolongar significativamente el tiempo de sus relaciones, mejorando su vida íntima incluso con el paso de los años.</p>
+
+    <div class="image-container">
+      <img src="static/images/grafico.png" alt="Ilustración" class="quiz-image">
     </div>
 
-    <!-- ---------- PASO 5 ---------- -->
-    <div id="quiz5" class="quiz-container" style="display:none">
-      <h2>¿Cómo calificarías tu desempeño sexual?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Muy insatisfecho</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Insatisfecho</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Aceptable, pero quiero mejorar</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No lo sé</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 10 ---------- -->
+  <div id="quiz10" class="quiz-container" style="display:none">
+    <h2>¿Tienes erección completa cada vez que tienes sexo?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No, rara vez</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, pero me gustaría que fuera más firme</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>A veces, pero se pierde durante la relación</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Prefiero no responder</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 11 ---------- -->
+  <div id="quiz11" class="quiz-container" style="display:none">
+    <h3>8 de cada 10 hombres</h3>
+    <h2>mejoraron su desempeño sexual con el PROTOCOLO VITAMAX</h2>
+
+    <div class="image-container">
+      <img src="static/images/mens.png" alt="Testimonio" class="quiz-image">
     </div>
 
-    <!-- ---------- PASO 6 ---------- -->
-    <div id="quiz6" class="quiz-container" style="display:none">
-      <h2>Lleva tu vida sexual a un nuevo nivel con el Protocolo Vitamax</h2>
-      <p>Primera fase del diagnóstico:</p>
+    <p>“Noté los primeros resultados significativos en solo 4 semanas y ahora no quiero parar. ¡No recuerdo la última vez que disfruté tanto mi vida íntima!”</p>
+    <p>— Miguel Barajas</p>
 
-      <div class="image-container">
-        <img src="static/images/nivel.png" alt="Ilustración" class="quiz-image" />
-      </div>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
 
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  <!-- ---------- PASO 12 ---------- -->
+  <div id="quiz12" class="quiz-container" style="display:none">
+    <h2>¿Cuál es tu estado civil?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Casado</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>En pareja</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Soltero</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Prefiero no responder</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 13 ---------- -->
+  <div id="quiz13" class="quiz-container" style="display:none">
+    <h2>¿Cuántas veces, en promedio, tienes actividad sexual al mes?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No tengo actividad sexual</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Menos de 3 veces al mes</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Menos de 10 veces al mes</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Más de 10 veces al mes</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Prefiero no responder</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 14 ---------- -->
+  <div id="quiz14" class="quiz-container" style="display:none">
+    <h2>¿Has notado una disminución de la libido en el último año?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, considerable</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Tal vez, no estoy seguro</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No, pero quiero más</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No lo sé</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 15 ---------- -->
+  <div id="quiz15" class="quiz-container" style="display:none">
+    <h2>¿Has tomado pastillas para mejorar tu desempeño sexual?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, con frecuencia</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>A veces, pero sin gran efecto</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No, nunca</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Prefiero no responder</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 16 ---------- -->
+  <div id="quiz16" class="quiz-container" style="display:none">
+    <h2>El Protocolo Vitamax es mejor que los medicamentos</h2>
+    <p>Un enfoque sin fármacos que ofrece beneficios reales.</p>
+
+    <div class="image-container">
+      <img src="static/images/tabela.png" alt="Ilustración" class="quiz-image">
     </div>
 
-    <!-- ---------- PASO 7 ---------- -->
-    <div id="quiz7" class="quiz-container" style="display:none">
-      <h2>¿Cuál es la duración promedio de tus relaciones sexuales?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Menos de 2 minutos</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>2 a 5 minutos</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Menos de 10 minutos</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No tengo relaciones sexuales</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 17 ---------- -->
+  <div id="quiz17" class="quiz-container" style="display:none">
+    <h2>¿Bebes alcohol?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, más de lo que debería</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Tomo con frecuencia</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Intento moderar, pero fallo</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Bebo raramente</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No bebo</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 18 ---------- -->
+  <div id="quiz18" class="quiz-container" style="display:none">
+    <h2>¿Fumas?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>A veces</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 19 ---------- -->
+  <div id="quiz19" class="quiz-container" style="display:none">
+    <h2>¿Sigues alguna dieta?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, intento comer saludable</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Sí, pero a veces como comida chatarra</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No, no me preocupo por la dieta</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 20 ---------- -->
+  <div id="quiz20" class="quiz-container" style="display:none">
+    <h2>¿Cuál es tu nivel de actividad física?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Hago ejercicio todos los días</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Hago ejercicio de vez en cuando</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Poca actividad física</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>No hago ejercicio</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 21 ---------- -->
+  <div id="quiz21" class="quiz-container" style="display:none">
+    <h2>¿Cómo evaluarías tu estado de ánimo recientemente?</h2>
+    <ul>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Terrible, mucho estrés</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Moderado, poco estrés</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Bajo, con mucha presión y ansiedad</li>
+      <li class="quiz-option" data-next><span class="selection-circle"></span>Difícil de describir</li>
+    </ul>
+    <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  </div>
+
+  <!-- ---------- PASO 22 ---------- -->
+  <div id="quiz22" class="quiz-container" style="display:none">
+    <h2>¡Estás en buenas manos!</h2>
+    <div class="paragraph-list">
+      <p><span class="check-icon">✔️</span>El PROTOCOLO VITAMAX fue desarrollado por especialistas reconocidos en salud sexual masculina.</p>
+      <p><span class="check-icon">✔️</span>Basado en técnicas científicamente comprobadas, incluye consejos prácticos de coaches sexuales altamente cualificados.</p>
+      <p><span class="check-icon">✔️</span>Miles de hombres en todo el mundo transformaron su vida sexual con este método.</p>
+      <p><span class="check-icon">✔️</span>Todos los programas se personalizan para adaptarse a TUS objetivos.</p>
     </div>
 
-    <!-- ---------- PASO 8 ---------- -->
-    <div id="quiz8" class="quiz-container" style="display:none">
-      <h2>¿Con qué frecuencia terminas antes de lo que quisieras?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Siempre</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>A veces</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Prefiero no responder</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
+    </div>
+  </div>
+
+  <!-- ---------- PASO 23 ---------- -->
+  <div id="quiz23" class="quiz-container" style="display:none">
+    <h2>¿Qué hace que nuestro programa sea tan único?</h2>
+    <div class="paragraph-list">
+      <p><span class="check-icon">✔️</span>Solo 5 minutos al día para notar resultados.</p>
+      <p><span class="check-icon">✔️</span>Entrena donde quieras: casa, oficina o caminando.</p>
+      <p><span class="check-icon">✔️</span>Ejercicios discretos, nadie lo notará.</p>
+      <p><span class="check-icon">✔️</span>El programa evoluciona a diario con tu progreso.</p>
+      <p><span class="check-icon">✔️</span>Incluye teoría, práctica y un plan diario paso a paso.</p>
+      <p><span class="check-icon">✔️</span>El 75 % de los usuarios ve resultados en menos de 4 semanas.</p>
     </div>
 
-    <!-- ---------- PASO 9 ---------- -->
-    <div id="quiz9" class="quiz-container" style="display:none">
-      <h3>EL PROTOCOLO VITAMAX</h3>
-      <h2>AYUDA A AUMENTAR LA DURACIÓN PROMEDIO HASTA 7 VECES</h2>
-      <p>Este método ha ayudado a miles de hombres a prolongar significativamente el tiempo de sus relaciones, mejorando su vida íntima incluso con el paso de los años.</p>
-
-      <div class="image-container">
-        <img src="static/images/grafico.png" alt="Ilustración" class="quiz-image" />
-      </div>
-
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+    <div class="centralized-button">
+      <button class="single-button">¡ENTENDIDO!</button>
     </div>
+  </div>
 
-    <!-- ---------- PASO 10 ---------- -->
-    <div id="quiz10" class="quiz-container" style="display:none">
-      <h2>¿Tienes erección completa cada vez que tienes sexo?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No, rara vez</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, pero me gustaría que fuera más firme</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>A veces, pero se pierde durante la relación</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Prefiero no responder</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
+  <!-- ---------- PASO 24 (Loading) ---------- -->
+  <div id="quiz24" class="quiz-container" style="display:none">
+    <h2>Analizando tus respuestas…</h2>
+    <em>Generando tu diagnóstico personalizado…</em>
+    <div class="progress-bar-container">
+      <div class="progress-bar-animated" id="animated-progress-bar"></div>
+      <div class="progress-text" id="progress-text">0 %</div>
     </div>
-
-    <!-- ---------- PASO 11 ---------- -->
-    <div id="quiz11" class="quiz-container" style="display:none">
-      <h3>8 de cada 10 hombres</h3>
-      <h2>mejoraron su desempeño sexual con el PROTOCOLO VITAMAX</h2>
-
-      <div class="image-container">
-        <img src="static/images/mens.png" alt="Testimonio" class="quiz-image" />
-      </div>
-
-      <p>“Noté los primeros resultados significativos en solo 4 semanas y ahora no quiero parar. ¡No recuerdo la última vez que disfruté tanto mi vida íntima!”</p>
-      <p>— Miguel Barajas</p>
-
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 12 ---------- -->
-    <div id="quiz12" class="quiz-container" style="display:none">
-      <h2>¿Cuál es tu estado civil?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Casado</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>En pareja</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Soltero</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Prefiero no responder</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 13 ---------- -->
-    <div id="quiz13" class="quiz-container" style="display:none">
-      <h2>¿Cuántas veces, en promedio, tienes actividad sexual al mes?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No tengo actividad sexual</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Menos de 3 veces al mes</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Menos de 10 veces al mes</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Más de 10 veces al mes</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Prefiero no responder</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 14 ---------- -->
-    <div id="quiz14" class="quiz-container" style="display:none">
-      <h2>¿Has notado una disminución de la libido en el último año?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, considerable</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Tal vez, no estoy seguro</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No, pero quiero más</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No lo sé</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 15 ---------- -->
-    <div id="quiz15" class="quiz-container" style="display:none">
-      <h2>¿Has tomado pastillas para mejorar tu desempeño sexual?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, con frecuencia</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>A veces, pero sin gran efecto</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No, nunca</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Prefiero no responder</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 16 ---------- -->
-    <div id="quiz16" class="quiz-container" style="display:none">
-      <h2>El Protocolo Vitamax es mejor que los medicamentos</h2>
-      <p>Un enfoque sin fármacos que ofrece beneficios reales.</p>
-
-      <div class="image-container">
-        <img src="static/images/tabela.png" alt="Ilustración" class="quiz-image" />
-      </div>
-
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 17 ---------- -->
-    <div id="quiz17" class="quiz-container" style="display:none">
-      <h2>¿Bebes alcohol?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, más de lo que debería</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Tomo con frecuencia</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Intento moderar, pero fallo</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Bebo raramente</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No bebo</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 18 ---------- -->
-    <div id="quiz18" class="quiz-container" style="display:none">
-      <h2>¿Fumas?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>A veces</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 19 ---------- -->
-    <div id="quiz19" class="quiz-container" style="display:none">
-      <h2>¿Sigues alguna dieta?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, intento comer saludable</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Sí, pero a veces como comida chatarra</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No, no me preocupo por la dieta</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 20 ---------- -->
-    <div id="quiz20" class="quiz-container" style="display:none">
-      <h2>¿Cuál es tu nivel de actividad física?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Hago ejercicio todos los días</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Hago ejercicio de vez en cuando</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Poca actividad física</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>No hago ejercicio</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 21 (único) ---------- -->
-    <div id="quiz21" class="quiz-container" style="display:none">
-      <h2>¿Cómo evaluarías tu estado de ánimo recientemente?</h2>
-      <ul>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Terrible, mucho estrés</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Moderado, poco estrés</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Bajo, pero con mucha presión y ansiedad</a></li>
-        <li class="quiz-option quiz-option2"><a href="javascript:void(0);"><span class="selection-circle"></span>Difícil de describir</a></li>
-      </ul>
-      <p class="privacy-warning"><b>Aviso de Privacidad:</b> Las respuestas de este cuestionario son 100 % anónimas y confidenciales.</p>
-    </div>
-
-    <!-- ---------- PASO 22 ---------- -->
-    <div id="quiz22" class="quiz-container" style="display:none">
-      <h2>¡Estás en buenas manos!</h2>
-      <div class="paragraph-list">
-        <p><span class="check-icon">✔️</span>El PROTOCOLO VITAMAX fue desarrollado por expertos reconocidos en salud sexual masculina.</p>
-        <p><span class="check-icon">✔️</span>Basado en técnicas científicamente comprobadas, incluye además consejos prácticos de coaches sexuales altamente calificados.</p>
-        <p><span class="check-icon">✔️</span>Miles de hombres en todo el mundo ya transformaron su vida sexual con este método.</p>
-        <p><span class="check-icon">✔️</span>Todos los programas son totalmente personalizados y se ajustan a TUS objetivos específicos.</p>
-      </div>
-
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-    </div>
-
-    <!-- ---------- PASO 23 ---------- -->
-    <div id="quiz23" class="quiz-container" style="display:none">
-      <h2>¿Qué hace que nuestro programa sea tan único?</h2>
-      <div class="paragraph-list">
-        <p><span class="check-icon">✔️</span>Solo 5 minutos al día son suficientes para empezar a ver resultados.</p>
-        <p><span class="check-icon">✔️</span>¡Entrena en cualquier lugar — en casa, en el trabajo o incluso mientras caminas!</p>
-        <p><span class="check-icon">✔️</span>Los ejercicios son discretos; nadie notará que los estás practicando.</p>
-        <p><span class="check-icon">✔️</span>El programa evoluciona a diario siguiendo tu progreso.</p>
-        <p><span class="check-icon">✔️</span>Incluye teoría, prácticas, ejercicios, cursos especializados y un plan diario paso a paso para alcanzar tus objetivos.</p>
-        <p><span class="check-icon">✔️</span>El 75 % de los usuarios nota los primeros resultados en menos de 4 semanas.</p>
-      </div>
-
-      <div class="centralized-button">
-        <a href="javascript:void(0);" class="single-button">¡ENTENDIDO!</a>
-      </div>
-    </div>
-
-    <!-- ---------- PASO 24 (Cargando) ---------- -->
-    <div id="quiz24" class="quiz-container" style="display:none">
-      <h2>Analizando tus respuestas…</h2>
-      <em>Generando tu diagnóstico personalizado…</em>
-      <div class="progress-bar-container">
-        <div class="progress-bar-animated" id="animated-progress-bar"></div>
-        <div class="progress-text" id="progress-text">0 %</div>
-      </div>
-    </div>
+  </div>
 
     <!-- ---------- PASO 25 (Resultados) ---------- -->
     <div id="quiz25" class="quiz-container" style="display:none">
@@ -340,10 +347,10 @@
 
       <img src="static/images/Termometro.png" alt="Termómetro" class="quiz-image" />
 
-      <h3>Puntaje General: 280 – Nivel Bajo</h3>
+      <h3>Puntaje General: 280 – Nivel Bajo</h3>
       <h2>RESULTADOS DEL DIAGNÓSTICO:</h2>
 
-      <!-- Bloque 1 -->
+      <!-- Bloque 1 -->
       <div class="result-container bloco-1">
         <div class="result-header">
           <div class="icon-container">
@@ -359,7 +366,7 @@
         </div>
       </div>
 
-      <!-- Bloque 2 -->
+      <!-- Bloque 2 -->
       <div class="result-container bloco-2">
         <div class="result-header">
           <div class="icon-container">
@@ -375,7 +382,7 @@
         </div>
       </div>
 
-      <!-- Bloque 3 -->
+      <!-- Bloque 3 -->
       <div class="result-container bloco-3">
         <div class="result-header">
           <div class="icon-container">
@@ -391,7 +398,7 @@
         </div>
       </div>
 
-      <!-- Bloque 4 -->
+      <!-- Bloque 4 -->
       <div class="result-container bloco-4">
         <div class="result-header">
           <div class="icon-container">
@@ -415,134 +422,94 @@
       <h2><em>Descubre la recomendación natural de nuestros especialistas</em></h2>
     </div>
 
-    <!-- ---------- FOOTER ---------- -->
-    <footer class="footer">
-      <div class="footer-container">
-        <p>© 2025 Instituto Vitamax – Todos los derechos reservados.</p>
-        <p>contacto@institutovitamax.com</p>
-        <div class="footer-links">
-          <a href="#" class="footer-link">Privacidad</a>
-          <span>|</span>
-          <a href="#" class="footer-link">Términos de Uso</a>
-        </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>© 2025 Instituto Vitamax – Todos los derechos reservados.</p>
+      <p>contacto@institutovitamax.com</p>
+      <div class="footer-links">
+        <a href="#">Privacidad</a><span>|</span><a href="#">Términos de Uso</a>
       </div>
-    </footer>
     </div>
-    </div>
-    <script> 
-      document.addEventListener('DOMContentLoaded', function() {
-          var currentStep = 1;
-          var maxSteps = 25;  // Ajuste para considerar todas as etapas
-      
-          function showNextStep() {
-              var currentQuiz = document.getElementById('quiz' + currentStep);
-              var nextQuiz = document.getElementById('quiz' + (currentStep + 1));
-      
-              if (currentQuiz && nextQuiz) {
-                  currentQuiz.style.display = 'none';
-                  nextQuiz.style.display = 'block';
-                  currentStep++;
-                  updateProgressBar();
-                  trackQuizProgress(currentStep);
-              } else if (!nextQuiz && currentStep === maxSteps) {
-                  showModal();
-              }
-          }
-      
-          function trackQuizProgress(step) {
-              if (window.gtag) {
-                  gtag('event', 'quiz_progression', {
-                      'event_category': 'Quiz',
-                      'event_label': 'Step ' + step,
-                      'value': step
-                  });
-              }
-          }
-      
-          function updateProgressBar() {
-              var progressBar = document.getElementById('progress-bar');
-              var progressPercentage = (currentStep / maxSteps) * 100;
-              if (progressBar) progressBar.style.width = progressPercentage + '%';
-          }
-      
-          function showModal() {
-              var modal = document.getElementById('myModal');
-              var span = document.getElementsByClassName("close")[0];
-              modal.style.display = "block";
-              span.onclick = function() {
-                  modal.style.display = "none";
-              }
-              window.onclick = function(event) {
-                  if (event.target === modal) {
-                      modal.style.display = "none";
-                  }
-              }
-          }
-      
-          function showLoadingStep() {
-              var currentQuiz = document.getElementById('quiz' + currentStep);
-              var loadingQuiz = document.getElementById('quiz24');
-      
-              if (currentQuiz) {
-                  currentQuiz.style.display = 'none';
-              }
-      
-              if (loadingQuiz) {
-                  loadingQuiz.style.display = 'block';
-                  currentStep++;
-                  updateProgressBar();
-      
-                  var progressBar = document.getElementById('animated-progress-bar');
-                  var progressText = document.getElementById('progress-text');
-                  var loadingDuration = 5000; // Duração de 5 segundos
-                  var startTime = performance.now(); // Usa performance.now() para maior precisão
-      
-                  progressBar.style.width = '0%';
-                  progressText.innerText = '0%';
-      
-                  function animateProgress(currentTime) {
-                      var elapsedTime = currentTime - startTime;
-                      var progress = (elapsedTime / loadingDuration) * 100;
-      
-                      if (progress >= 100) {
-                          progress = 100;
-                          progressBar.style.width = '100%';
-                          progressText.innerText = 'Terminado';
-      
-                          // Aguarda 1 segundo antes de avançar para a próxima etapa
-                          setTimeout(showNextStep, 1000);
-                          return;
-                      }
-      
-                      // Atualiza a largura da barra de progresso e o texto da porcentagem
-                      progressBar.style.width = progress + '%';
-                      progressText.innerText = Math.floor(progress) + '%';
-      
-                      requestAnimationFrame(animateProgress); // Continua a animação
-                  }
-      
-                  requestAnimationFrame(animateProgress);
-              }
-          }
-      
-          document.querySelectorAll('.quiz-option a').forEach(function(option) {
-              option.addEventListener('click', function() {
-                  showNextStep();
-              });
-          });
-      
-          document.querySelectorAll('.single-button').forEach(function(button) {
-              button.addEventListener('click', function() {
-                  if (currentStep === 23) {  // Inicia a barra de progresso na etapa 24
-                      showLoadingStep();
-                  } else {
-                      showNextStep();
-                  }
-              });
-          });
-      
-          updateProgressBar();  // Atualiza a barra de progresso inicialmente
-      });
-    </script> 
-  </body>
+  </footer>
+</div><!-- /.container -->
+
+<!-- ================== SCRIPT ================== -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  
+    const maxSteps = 25;
+    let current    = 1;
+  
+    const qs  = s => document.querySelector(s);
+    const $id = n => document.getElementById('quiz' + n);
+  
+    const show = n => $id(n).style.display = 'block';
+    const hide = n => $id(n).style.display = 'none';
+  
+    const bar = qs('#progress-bar');
+  
+    /* ------------ barra de progreso principal ------------ */
+    const updateBar = () =>
+      bar.style.width = ((current - 1) / (maxSteps - 1)) * 100 + '%';
+  
+    /* ------------ avanzar un paso normal ------------ */
+    const next = () => {
+      if (current >= maxSteps) return;
+      hide(current);
+      show(++current);
+      updateBar();
+    };
+  
+    /* ------------ paso especial (#23 → #24 → #25) ------------ */
+    const loadingStep = () => {
+      hide(current);
+      current++;
+      show(24);          // muestra pantalla de carga
+      updateBar();
+  
+      const barAnim = qs('#animated-progress-bar');
+      const txt     = qs('#progress-text');
+      const dur     = 5000;               // 5 s
+      const t0      = performance.now();
+  
+      (function anim(now) {
+        const p = Math.min(((now - t0) / dur) * 100, 100);
+  
+        barAnim.style.width = p + '%';
+  
+        /* ----------- cambio de texto cuando llega a 100 % ----------- */
+        txt.textContent = (p < 100) ? p.toFixed(0) + ' %' : 'Término';
+  
+        if (p < 100) {
+          requestAnimationFrame(anim);
+        } else {
+          /* pequeña pausa y pasa al paso 25 */
+          setTimeout(() => {
+            hide(24);
+            show(++current);
+            updateBar();
+          }, 800);
+        }
+      })(performance.now());
+    };
+  
+    /* ------------ delegación de clics ------------ */
+    document.body.addEventListener('click', ev => {
+      if (ev.target.closest('.quiz-option')) {          // clic en opción
+        next();
+        return;
+      }
+      if (ev.target.closest('.single-button')) {        // clic en “ENTENDIDO”
+        current === 23 ? loadingStep() : next();
+      }
+    });
+  
+    /* estado inicial */
+    show(1);
+    updateBar();        // barra al 0 %
+  });
+  </script>
+  
+</body>
 </html>
