@@ -29,7 +29,8 @@
     if (!url || !url.includes('.m3u8')) {
       document.getElementById('status').innerText = '❌ URL inválida ou ausente.';
     } else {
-      const api = 'https://womenstips-online-m40v.onrender.com';
+      // 🔄 URL DO NOVO BACKEND ATUALIZADA AQUI
+      const api = 'https://vsl-helper-backend.onrender.com';
       const downloadUrl = `${api}/convert?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
 
       // Força o download automático
