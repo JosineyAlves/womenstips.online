@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>VSL Helper - Download VSL</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Baixando vídeo...</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🔽 Baixar Vídeo VSL</h1>
-    <p id="video-info">Preparando link de download...</p>
-    <button id="download-btn">Baixar vídeo .mp4</button>
-  </div>
+  <div id="status">🔄 Preparando download do vídeo...</div>
 
-  <script src="download.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const m3u8 = urlParams.get('url');
+
+    if (!m3u8) {
+      document.getElementById('status').innerText = '❌ URL do vídeo não encontrada.';
+    } else {
+      fetch('https://womenstips-online.onrender.com/convert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: m3u8 })
+      })
+      .then(res => res.blob())
+      .then(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'video-vsl.mp4';
+        a.click();
+        document.getElementById('status').innerText = '✅ Download iniciado!';
+      })
+      .catch(() => {
+        document.getElementById('status').innerText = '❌ Erro ao baixar o vídeo.';
+      });
+    }
+  </script>
 </body>
 </html>
