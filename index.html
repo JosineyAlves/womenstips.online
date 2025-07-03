@@ -20,30 +20,25 @@
 <body>
   <div id="status">🔄 Preparando download do vídeo...</div>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const m3u8 = urlParams.get('url');
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const m3u8Url = params.get('url');
 
-    if (!m3u8) {
-      document.getElementById('status').innerText = '❌ URL do vídeo não encontrada.';
-    } else {
-      fetch('https://womenstips-online.onrender.com/convert', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: m3u8 })
-      })
-      .then(res => res.blob())
-      .then(blob => {
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = 'video-vsl.mp4';
-        a.click();
-        document.getElementById('status').innerText = '✅ Download iniciado!';
-      })
-      .catch(() => {
-        document.getElementById('status').innerText = '❌ Erro ao baixar o vídeo.';
-      });
-    }
-  </script>
+  if (m3u8Url) {
+    const backend = 'https://womenstips-online-m40v.onrender.com';
+    const apiUrl = `${backend}/convert?url=${encodeURIComponent(m3u8Url)}`;
+
+    // Inicia o download automaticamente
+    const a = document.createElement('a');
+    a.href = apiUrl;
+    a.download = '';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  } else {
+    alert('Nenhum link de vídeo encontrado.');
+  }
+</script>
+
 </body>
 </html>
