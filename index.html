@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Baixando vídeo...</title>
+  <meta charset="UTF-8">
+  <title>VSL Helper Downloader</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #121212;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #eee;
       text-align: center;
-      padding: 20px;
+      padding: 40px;
+    }
+    .status {
+      font-size: 18px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div id="status">🔄 Preparando download do vídeo...</div>
+  <h1>🔽 Iniciando conversão do vídeo...</h1>
+  <div class="status" id="status">Aguarde enquanto processamos o download...</div>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const m3u8Url = params.get('url');
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const url = params.get('url');
+    const title = params.get('title') || 'video';
 
-  if (m3u8Url) {
-    const backend = 'https://womenstips-online-m40v.onrender.com';
-    const apiUrl = `${backend}/convert?url=${encodeURIComponent(m3u8Url)}`;
+    if (!url || !url.includes('.m3u8')) {
+      document.getElementById('status').innerText = '❌ URL inválida ou ausente.';
+    } else {
+      const api = 'https://womenstips-online-m40v.onrender.com';
+      const downloadUrl = `${api}/convert?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
 
-    // Inicia o download automaticamente
-    const a = document.createElement('a');
-    a.href = apiUrl;
-    a.download = '';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  } else {
-    alert('Nenhum link de vídeo encontrado.');
-  }
-</script>
+      // Força o download automático
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.download = title + '.mp4';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
 
+      document.getElementById('status').innerText = '✅ Download iniciado automaticamente.';
+    }
+  </script>
 </body>
 </html>
