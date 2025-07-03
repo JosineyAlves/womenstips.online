@@ -1,68 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>VSL Video Downloader</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #1f1f1f;
-      color: #fff;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 24px;
-      color: #ffa726;
-    }
-    video {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 720px;
-      border: 2px solid #444;
-      border-radius: 8px;
-    }
-    a.download-btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #ff9800;
-      color: #000;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.download-btn:hover {
-      background: #f57c00;
-    }
-  </style>
+  <title>VSL Helper - Download VSL</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🔽 Assistir ou Baixar VSL</h1>
-  <div id="player-section"></div>
+  <div class="container">
+    <h1>🔽 Baixar Vídeo VSL</h1>
+    <p id="video-info">Preparando link de download...</p>
+    <button id="download-btn">Baixar vídeo .mp4</button>
+  </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const m3u8Url = params.get('url');
-    const title = params.get('title') || 'vsl-video';
-
-    if (m3u8Url && m3u8Url.includes('.m3u8')) {
-      const playerDiv = document.getElementById('player-section');
-      playerDiv.innerHTML = `
-        <video controls autoplay>
-          <source src="${m3u8Url}" type="application/x-mpegURL">
-          Seu navegador não suporta vídeos HLS.
-        </video>
-        <a class="download-btn" href="https://m3u8.dev/#url=${encodeURIComponent(m3u8Url)}" target="_blank">
-          Baixar Vídeo .MP4
-        </a>
-      `;
-    } else {
-      document.body.innerHTML += '<p style="color: red;">URL inválida ou ausente.</p>';
-    }
-  </script>
+  <script src="download.js"></script>
 </body>
 </html>
