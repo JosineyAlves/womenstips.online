@@ -8,10 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --background: #fff9f3;
+      --background: none;
       --foreground: #2a3142;
       --primary: #ffe5f0;
-      --secondary: #d6eaff;
+      --secondary: #f97362;
       --muted: #fff7d6;
       --accent: #f97362;
       --accent-foreground: #fff;
@@ -20,10 +20,10 @@
       --shadow: 0 4px 24px rgba(0,0,0,0.10);
       --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
       --gradient-primary: linear-gradient(135deg, #ffe5f0 0%, #d6eaff 100%);
-      --gradient-accent: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      --gradient-accent: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
       --highlight: #f97362;
       --blue: #60a5fa;
-      --green: #22c55e;
+      --green: #ffb347;
       --red: #f87171;
     }
     
@@ -73,7 +73,7 @@
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 0rem;
       align-items: flex-start;
       z-index: 2;
       max-width: 600px;
@@ -113,7 +113,7 @@
     }
     
     .hero-content h1 .gradient {
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -128,7 +128,7 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
       border-radius: 2px;
     }
     
@@ -141,7 +141,7 @@
     }
     
     .hero-content .cta-btn {
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
       color: #fff;
       font-size: 1.3rem;
       font-weight: 600;
@@ -350,7 +350,7 @@
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      color: #22c55e;
+      color: #ffb347;
     }
     
     .benefit-card p {
@@ -412,7 +412,7 @@
       font-size: 1.2rem;
       font-weight: 600;
       margin-bottom: 1rem;
-      color: #22c55e;
+      color: #ffb347;
     }
     
     .why-choose-item p {
@@ -486,7 +486,7 @@
     
     /* Footer */
     footer {
-      background: var(--foreground);
+      background: var(--accent-foreground);
       color: #fff;
       text-align: center;
       padding: 3rem 0 2rem 0;
@@ -516,7 +516,7 @@
     }
     
     footer .footer-links a:hover {
-      color: #22c55e;
+      color: #ffb347;
     }
     
     /* Inspirational Block */
@@ -535,7 +535,7 @@
       line-height: 1.3;
     }
     .inspirational .gradient {
-      background: linear-gradient(90deg, #22c55e, #16a34a, var(--secondary));
+      background: linear-gradient(90deg, #ffb347, #ff9800, var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -572,7 +572,7 @@
     }
     /* Testimonials */
     .testimonials-section {
-      background: linear-gradient(135deg, var(--secondary) 60%, #fff 100%);
+      background: linear-gradient(135deg, var(--muted) 0%, #fff 100%);
       padding: 4rem 0 3rem 0;
     }
     .testimonials-section h2 {
@@ -583,7 +583,7 @@
     }
     .testimonials-section p {
       text-align: center;
-      color: #6b7280;
+      color: var(--foreground);
       margin-bottom: 2.5rem;
       font-size: 1.1rem;
     }
@@ -608,11 +608,6 @@
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
     }
-    .testimonial-card .quote {
-      font-size: 1.5rem;
-      color: #f89c8c;
-      margin-bottom: 1rem;
-    }
     .testimonial-card .content {
       color: #6b7280;
       font-size: 1.1rem;
@@ -625,7 +620,7 @@
       font-size: 1.1rem;
     }
     .testimonial-card .role {
-      color: #22c55e;
+      color: #ffb347;
       font-size: 0.95rem;
       font-weight: 500;
     }
@@ -670,7 +665,7 @@
     }
     .offer-section .discount-badge {
       background: rgba(255,255,255,0.9);
-      color: #22c55e;
+      color: #ffb347;
       padding: 0.4rem 1.2rem;
       border-radius: 999px;
       font-weight: 700;
@@ -688,7 +683,7 @@
     }
     .offer-section .timer-block {
       background: rgba(255,255,255,0.95);
-      color: #22c55e;
+      color: #ffb347;
       border-radius: 1rem;
       padding: 1rem 1.5rem;
       font-size: 2rem;
@@ -721,7 +716,7 @@
       font-weight: 500;
     }
     .offer-section .offer-list li .icon {
-      color: #22c55e;
+      color: #ffb347;
       font-size: 1.2rem;
       background: rgba(255,255,255,0.2);
       border-radius: 50%;
@@ -732,7 +727,7 @@
       justify-content: center;
     }
     .offer-section .cta-btn {
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
       color: #fff;
       font-size: 1.3rem;
       font-weight: 700;
@@ -745,6 +740,8 @@
       margin-bottom: 0.5rem;
       margin-top: 1.5rem;
       text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      text-decoration: none;
+
     }
     .offer-section .cta-btn:hover {
       background: #e75b4e;
@@ -756,7 +753,7 @@
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
       color: #fff;
       padding: 1rem 2.5rem;
       border-radius: 999px;
@@ -827,13 +824,13 @@
       }
       
       .hero-content .cta-btn {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         padding: 1rem 2rem;
         width: 100%;
         max-width: 300px;
         margin: 0 auto 1rem auto;
         display: block;
-        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
         color: #fff;
         border: 2px solid rgba(255,255,255,0.2);
       }
@@ -1064,7 +1061,7 @@
         font-size: 1.8rem;
         min-width: 70px;
         background: rgba(255,255,255,0.95);
-        color: #22c55e;
+        color: #ffb347;
       }
       
       .offer-section .timer-label {
@@ -1101,8 +1098,8 @@
         max-width: 350px;
         margin: 1.5rem auto 0 auto;
         display: block;
-        background: rgba(255,255,255,0.95);
-        color: #22c55e;
+        background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
+        color: #fff;
         border: 2px solid rgba(255,255,255,0.3);
       }
       
@@ -1150,7 +1147,7 @@
     @media (max-width: 480px) {
       /* Extra Small Mobile */
       .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 2.0rem;
       }
       
       .hero-content .cta-btn {
@@ -1181,7 +1178,7 @@
       }
       
       .floating-cta {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
         padding: 0.7rem 1.5rem;
         bottom: 20px;
         left: 50%;
@@ -1189,7 +1186,7 @@
         width: 90%;
         max-width: 350px;
         justify-content: center;
-        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        background: linear-gradient(135deg, #ffb347 0%, #ff9800 100%);
         color: #fff;
         border: 2px solid rgba(255,255,255,0.2);
       }
@@ -1218,7 +1215,7 @@
       flex-wrap: wrap;
     }
     .interactive-media {
-      flex: 1 1 340px;
+      flex: 1 1 150px;
       min-width: 320px;
       max-width: 420px;
       position: relative;
@@ -1232,30 +1229,6 @@
       border-radius: 1.5rem;
       overflow: hidden;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    }
-    .play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      background: rgba(255,255,255,0.85);
-      border: none;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: var(--highlight);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      cursor: pointer;
-      transition: background 0.2s;
-      z-index: 2;
-    }
-    .play-btn:hover {
-      background: var(--highlight);
-      color: #fff;
     }
     .tag {
       position: absolute;
@@ -1375,12 +1348,23 @@
         margin-bottom: 0;
       }
     }
+    .mockup-container {
+      display: flex;
+      justify-content: center;
+      margin: 2.5rem 0 0 0;
+    }
+    .mockup-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
   </style>
 </head>
 <body>
   <!-- Floating CTA -->
   <div id="floating-cta" class="floating-cta hidden">
-    <span>💖 Quero por R$ 9,97</span>
+    <a href="https://pay.hotmart.com/C100845880P?bid=1752607913115" target="_blank" style="color:inherit;text-decoration:none;">💖 Quero por R$ 9,97</a>
     <button id="cta-close">✖️</button>
     </div>
 
@@ -1391,13 +1375,12 @@
         <span class="badge">✨ LANÇAMENTO ESPECIAL</span>
         <h1>
           <span class="gradient">+70 Personagens</span><br>
-          da Bíblia em <span class="gradient">Estilo Fofo</span><br>
-          para Colorir e Amar
+          da Bíblia em <span class="gradient">Estilo Fofo</span> para Colorir e Amar
         </h1>
         <p>Estude, colecione e se encante com as ilustrações mais fofas dos personagens bíblicos! Transforme momentos de colorir em aprendizado espiritual.</p>
-        <button class="cta-btn">💖 Quero Agora por R$ 9,97</button>
+        <button class="cta-btn" onclick="window.open('https://pay.hotmart.com/C100845880P?bid=1752607913115','_blank')">💖 Quero Agora por R$ 9,97</button>
       </div>
-      <img class="hero-img" src="img/hero-character-CN32iBqX.jpg" alt="Personagem bíblico fofo para colorir">
+      <img class="hero-img" src="img/banner.jpg" alt="Personagem bíblico fofo para colorir">
     </div>
     <div class="hero-badges">
       <div class="badge-off">67% OFF</div>
@@ -1456,10 +1439,6 @@
           <p>Personagens únicos com design exclusivo que as crianças adoram</p>
         </div>
         <div class="why-choose-item">
-          <h4>Entrega Imediata e Reutilizável</h4>
-          <p>Acesso instantâneo para usar quantas vezes quiser</p>
-        </div>
-        <div class="why-choose-item">
           <h4>Lúdico, Visual e Educativo</h4>
           <p>Aprenda a Bíblia de forma divertida e memorável</p>
         </div>
@@ -1468,13 +1447,16 @@
           <p>Perfeito para crianças, jovens e adultos se conectarem com a fé</p>
         </div>
       </div>
+      <div class="mockup-container">
+        <img src="img/" alt="Mockup do material" class="mockup-img">
+      </div>
     </div>
   </section>
 
   <!-- Inspirational Block -->
   <section class="inspirational">
     <div class="container">
-      <blockquote>"Enquanto milhares de pessoas acalmam a mente com desenhos, <span class="gradient">nós conectamos cor e fé</span> <span class="gradient">com a Bíblia</span>."</blockquote>
+      <blockquote>"Enquanto milhares de crianças acalmam a mente com desenhos, <span class="gradient">nós conectamos cor e fé</span> <span class="gradient">com a Bíblia</span>."</blockquote>
       <div class="glass">✨ Transforme momentos simples em conexão espiritual profunda. Cada traço de cor é uma oração, cada personagem uma lição de vida.</div>
       <div class="insp-grid">
         <div class="insp-item">
@@ -1502,7 +1484,6 @@
       <div class="interactive-media">
         <div class="interactive-media-img">
           <img src="https://i.imgur.com/JbAonXR.gif" alt="Criança colorindo personagem bíblico" style="width:100%; border-radius: 1.5rem;">
-          <button class="play-btn" aria-label="Play video"><span>▶</span></button>
           <span class="tag tag-magic">✨ Mágico</span>
           <span class="tag tag-cute">Fofo</span>
         </div>
@@ -1526,47 +1507,41 @@
   <section class="testimonials-section">
     <div class="container">
       <h2>O que as famílias estão dizendo</h2>
-      <p>Mais de 1.500 famílias já transformaram o aprendizado bíblico com nossos personagens fofos. Veja o que elas têm a dizer sobre essa experiência incrível!</p>
+      <p>Mais de 1.500 famílias já transformaram o aprendizado bíblico com nossos personagens fofos. Veja o que elas têm a dizer sobre essa experiência incrível!"</p>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="quote">"</div>
-          <div class="content">Meus filhos adoraram colorir os personagens! Agora eles conhecem muito mais histórias da Bíblia e sempre pedem para colorir mais.</div>
+          <div class="content">"Meus filhos adoraram colorir os personagens! Agora eles conhecem muito mais histórias da Bíblia e sempre pedem para colorir mais."</div>
           <div class="author">Carla Oliveira</div>
           <div class="role">Mãe de 2 filhos</div>
         </div>
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="quote">"</div>
-          <div class="content">Excelente para usar na igreja! As crianças ficam encantadas e aprendem de forma visual. Recomendo para todos os ministérios infantis.</div>
+          <div class="content">"Excelente para usar na igreja! As crianças ficam encantadas e aprendem de forma visual. Recomendo para todos os ministérios infantis."</div>
           <div class="author">Pr. João Silva</div>
           <div class="role">Pastor</div>
         </div>
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="quote">"</div>
-          <div class="content">Material incrível! Minha filha ama e uso também nas minhas aulas. A qualidade é excepcional e o estilo é muito fofo.</div>
+          <div class="content">"Material incrível! Minha filha ama e uso também nas minhas aulas. A qualidade é excepcional e o estilo é muito fofo."</div>
           <div class="author">Ana Costa</div>
           <div class="role">Professora EBD</div>
         </div>
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="quote">"</div>
-          <div class="content">Comprei para meu filho de 6 anos e ele não para de colorir! Excelente ferramenta para ensinar valores cristãos de forma divertida.</div>
+          <div class="content">"Comprei para meu filho de 6 anos e ele não para de colorir! Excelente ferramenta para ensinar valores cristãos de forma divertida."</div>
           <div class="author">Pedro Santos</div>
           <div class="role">Pai de família</div>
         </div>
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="quote">"</div>
-          <div class="content">Uso com as crianças da igreja todos os domingos. Elas se divertem e ainda aprendem sobre os personagens bíblicos. Perfeito!</div>
+          <div class="content">"Uso com as crianças da igreja todos os domingos. Elas se divertem e ainda aprendem sobre os personagens bíblicos. Perfeito!"</div>
           <div class="author">Márcia Lima</div>
           <div class="role">Líder do infantil</div>
         </div>
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="quote">"</div>
-          <div class="content">Minha esposa e eu colorimos junto com nossa filha. É um momento especial de família e ainda ensinamos a Bíblia. Recomendo demais!</div>
+          <div class="content">"Minha esposa e eu colorimos junto com nossa filha. É um momento especial de família e ainda ensinamos a Bíblia. Recomendo demais!"</div>
           <div class="author">Rafael Mendes</div>
           <div class="role">Papai coruja</div>
         </div>
@@ -1584,7 +1559,7 @@
         <span class="discount-badge">67% OFF</span>
       </div>
       <div style="margin: 1.5rem 0 0.5rem 0;">
-        <span style="background: linear-gradient(90deg, var(--accent) 20%, var(--primary) 100%); color: var(--accent); font-weight: bold; padding: 0.7rem 2rem; border-radius: 1.5rem;">💰 Economia de R$ 20,00 só hoje!</span>
+        <span style="background-color: #d6eaff; font-weight: bold; padding: 0.7rem 2rem; border-radius: 1.5rem;">💰 Economia de R$ 20,00 só hoje!</span>
       </div>
       <div class="timer" id="timer">
         <div>
@@ -1600,20 +1575,17 @@
           <div class="timer-label">SEG</div>
         </div>
       </div>
+      <a class="cta-btn" href="https://pay.hotmart.com/C100845880P?bid=1752607913115" target="_blank">🛒 SIM! QUERO POR R$ 9,97</a>
       <ul class="offer-list">
         <li><span class="icon">✅</span> +70 Personagens Bíblicos únicos</li>
-        <li><span class="icon">✅</span> Devocional 30 dias exclusivo</li>
-        <li><span class="icon">✅</span> Checklist de estudos bíblicos</li>
+        <li><span class="icon">✅</span> Checklist colecionável dos personagens</li>
         <li><span class="icon">✅</span> Planner Bíblico organizador</li>
         <li><span class="icon">✅</span> Livro para Colorir completo</li>
         <li><span class="icon">✅</span> Arquivos para impressão e tablet</li>
         <li><span class="icon">✅</span> Atualizações gratuitas por 1 ano</li>
         <li><span class="icon">✅</span> Suporte 24h via WhatsApp</li>
+        <li><span class="icon">✅</span>  Garantia incondicional de 7 dias</li>
       </ul>
-      <button class="cta-btn">🛒 SIM! QUERO POR R$ 9,97</button>
-      <div style="margin-top:1.5rem;color:#6b7280;font-size:1rem;">
-        ✅ Acesso imediato após o pagamento • ✅ Garantia incondicional de 7 dias • ✅ Suporte especializado 24h
-      </div>
     </div>
   </section>
 
