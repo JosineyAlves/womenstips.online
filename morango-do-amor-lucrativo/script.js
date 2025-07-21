@@ -122,9 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== SALE NOTIFICATION POPUP =====
   const salePopup = document.querySelector('.sale-notification');
   if(salePopup){
-      const names = ["Maria C.", "João P.", "Ana S.", "Carlos L.", "Sofia M."];
-      const locations = ["São Paulo, SP", "Rio de Janeiro, RJ", "Belo Horizonte, MG", "Salvador, BA", "Curitiba, PR"];
-      const plans = ["Pacote Premium", "Acesso Completo"];
+      const names = [
+  "Juliana F.", "Camila R.", "Patrícia A.", "Lorena D.", "Bruna M.",
+  "Tatiane V.", "Vanessa S.", "Gabriela N.", "Renata K.", "Luana E.",
+  "Mariane C.", "Letícia H.", "Nathalia Z.", "Rafaela T.", "Carla B."
+];
+const locations = [
+  "Fortaleza, CE", "Manaus, AM", "Brasília, DF", "Porto Alegre, RS", "João Pessoa, PB",
+  "Recife, PE", "Campinas, SP", "Florianópolis, SC", "São Luís, MA", "Vitória, ES",
+  "Aracaju, SE", "Campo Grande, MS", "Teresina, PI", "Maceió, AL", "Belém, PA"
+];
+      const plans = ["Pacote Premium"];
 
       function showSaleNotification() {
           const randomName = names[Math.floor(Math.random() * names.length)];
