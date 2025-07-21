@@ -162,6 +162,8 @@ section {
   border-radius: 999px;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+  color: white;
+
 }
 .security-badge i { margin-right: 0.5rem; }
 
@@ -181,7 +183,7 @@ section {
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
   max-width: 500px;
 }
@@ -665,6 +667,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    text-align: center;
 }
 .objection-quotes {
     display: grid;
@@ -743,7 +746,6 @@ section {
     margin: 0 auto;
     background: #fff;
     border-radius: 1.25rem;
-    box-shadow: 0 4px 16px var(--bg-dark);
     padding: 2rem 1.5rem 2rem;
     text-align: center;
 }
@@ -758,6 +760,7 @@ section {
     justify-content: center;
     gap: 0.5rem;
     background: none;
+    text-align: center;
 }
 .opportunity-subtitle {
     color: #444;
@@ -910,7 +913,7 @@ strong, b {
 
 @media (max-width: 768px) {
     .section-title { font-size: 2rem; }
-    .hero-title { font-size: 2.5rem; }
+    .hero-title { font-size: 2rem; }
     .carousel-slide { min-width: 80%; }
     .testimonials-carousel {
         flex-direction: row;
@@ -967,8 +970,8 @@ strong, b {
     border-radius: 1rem;
     box-shadow: 0 4px 16px rgba(34,197,94,0.07);
     padding: 1.5rem 1rem 1.2rem 1rem;
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction:row;
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
@@ -1064,7 +1067,7 @@ strong, b {
     border-spacing: 0;
 }
 .profits-table th {
-    font-size: 1.08rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #F25A73;
     background: #fff0f4;
