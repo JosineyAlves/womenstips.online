@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limited-time presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-section {
+            background-color: #259962;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 200;
+        }
+
+        .header-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 30px;
+            line-height: 1.3;
+            font-family: 'Merriweather', serif;
+        }
+
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .author-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .author-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #9E0000;
+        }
+
+        .author-journal {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .author-date {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #7a7a7a;
+            margin-top: 5px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            font-weight: 500;
+        }
+
+        .content-text p {
+            margin-bottom: 12px;
+        }
+
+        .content-text strong {
+            font-weight: bold;
+        }
+
+        .blockquote {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007cba;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .content-image {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            margin: 30px auto;
+            display: block;
+        }
+
+        .video-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            margin: 30px 0 -10px 0;
+        }
+
+        .video-title a {
+            color: #007cba;
+            text-decoration: none;
+        }
+
+        .video-title a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #CC0000;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            margin: -30px auto;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #005a8b;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .footer-section {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.2;
+            color: #666;
+            text-align: center;
+        }
+
+        .footer-text p {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .header-image {
+                max-width: 90%;
+            }
+
+            .article-title {
+                font-size: 26px;
+            }
+
+            .author-section {
+                flex-direction:row;
+                text-align: left;
+            }
+
+            .author-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .content-text {
+                font-size: 15px;
+            }
+
+            .blockquote {
+                font-size: 15px;
+                padding: 15px;
+            }
+        }
+
+        /* Scripts embutidos */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Script para alternar título -->
+    <script>
+        function alternarTitulo() {
+            const titulos = ["📩 (1) Unread Message", "(1) Unread Message "];
+            let indice = 0;
+
+            function atualizarTitulo() {
+                document.title = titulos[indice];
+                indice = (indice + 1) % titulos.length;
+            }
+
+            atualizarTitulo();
+            setInterval(atualizarTitulo, 1000);
+        }
+
+        window.onload = alternarTitulo;
+    </script>
+
+    <!-- Script de Backredirect -->
+    <script>
+        var urlBackRedirect = 'https://womenstips.online/prznt/vsl/';
+        var shouldRedirect = false;
+        var scrollDetected = false;
+        var ignoreBackRedirect = false;
+
+        if (document.location.search) {
+            urlBackRedirect += (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') + 
+                              document.location.search.replace('?', '').toString();
+        }
+
+        window.addEventListener('scroll', function onScroll() {
+            if (!scrollDetected) {
+                scrollDetected = true;
+                shouldRedirect = true;
+                window.removeEventListener('scroll', onScroll);
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            var target = e.target.closest('#offer, #buy');
+            if (target) {
+                ignoreBackRedirect = true;
+            }
+        });
+
+        history.pushState(null, "", location.href);
+        history.pushState(null, "", location.href);
+
+        window.onpopstate = function () {
+            if (shouldRedirect && !ignoreBackRedirect) {
+                setTimeout(function () {
+                    window.location.href = encodeURI(urlBackRedirect);
+                }, 1);
+            }
+        };
+    </script>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="container">
+            <h2 class="header-title">Advertisement</h2>
+            <img src="img/health-and-wellness-journal.webp" 
+                 alt="Health and Wellness Journal" 
+                 class="header-image">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <h2 class="article-title">Endocrinologist: Struggling to lose weight? Try this 15-second trick at home every morning.</h2>
+            
+            <!-- Author Section -->
+            <div class="author-section">
+                <img src="img/Dr.-Casey-Means.webp" 
+                     alt="Dr. Casey Means" 
+                     class="author-image">
+                <div class="author-info">
+                    <p class="author-name">
+                        Boston,
+                        <span class="author-title">By Dr. Casey Means</span><br>
+                        <span class="author-journal">M.D Health & Wellness Journal</span><br>
+                        <span class="author-date">
+                            <span id="current-date"></span> - Updated 2 hours ago
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="content-text">
+                <p>We've always been told to follow a <strong>calorie deficit diet</strong>, exercise, cut out sweets and carbs, and drink plenty of water to lose body fat.</p>
+                
+                <p>Now, <strong>Dr. Casey Means</strong>, a leading researcher at the <strong>Johns Hopkins Institute of Medicine</strong> and a health expert with years of experience…</p>
+                
+                <p>Confidently claims that <strong>all of this is only half the truth.</strong></p>
+                
+                <p>According to her, the weight loss methods that most people use and that go viral online may help with weight control, but <strong>not in a fast or permanent way.</strong></p>
+                
+                <p>And the reason for this is simple: These solutions <strong>do not address the root cause</strong> of the problem.</p>
+                
+                <p>Recently, on her social media, Dr. Means launched an unusual challenge: She asked her followers to start eating carbs normally again, including sweets, pizza, and pasta.</p>
+                
+                <p><strong>Why?</strong></p>
+                
+                <p>It's simple!</p>
+                
+                <p>She discovered a <strong>straightforward trick using pink salt</strong>, 100% natural, that anyone can do at home to <strong>"eat" away belly fat.</strong></p>
+                
+                <p><strong>That's right!</strong></p>
+                
+                <p>This trick is so powerful that if it fell into the hands of the pharmaceutical industry, it would generate <strong>millions and millions of dollars</strong> in profits.</p>
+            </div>
+
+            <div class="blockquote">
+                <p><strong>"This homemade pink salt trick works better than trendy new weight loss products that cost $1,000 or more.</strong><br>
+                You might even feel outraged after seeing how simple it is to burn body fat automatically 24 hours a day, 7 days a week."<br>
+                — Said researcher Dr. Casey Means in an interview with Fox News.</p>
+            </div>
+
+            <!-- First Image -->
+            <a href="https://womenstips.online/prznt/vsl/">
+                <img src="img/presell175.010-1024x576.webp" 
+                     alt="Pink Salt Trick" 
+                     class="content-image">
+            </a>
+
+            <div class="content-text">
+                <p><strong>Thousands of people who tried this homemade pink salt trick reported losing weight very quickly</strong> in the first two weeks…</p>
+                
+                <p>Noticing a <strong>significant reduction in measurements</strong>, even while <strong>eating sweets and their favorite foods</strong>, without going to the gym or following strict diets.</p>
+                
+                <p>Dr. Means' followers nicknamed this new technique the <strong>"Pink Salt Trick,"</strong> because it's a truly simple solution that <strong>activates the body's automatic fat-burning mode 24 hours a day, 7 days a week.</strong></p>
+                
+                <p>After this news went viral on Instagram, Dr. Means gave a full interview revealing the <strong>step-by-step details of this simple recipe</strong> to the public — <strong>for free and without ads</strong> — where she describes exactly how to prepare this solution.</p>
+            </div>
+
+            <div class="blockquote">
+                <p><em>"If this homemade trick helps anyone lose weight or regain their confidence, I would be honored to know that I contributed."</em> – Dr. Means commented.</p>
+            </div>
+
+            <div class="content-text">
+                <p>After that, the video <strong>went viral on social media.</strong></p>
+                
+                <p>First, it was shared by Facebook users, then on YouTube, and now on <strong>TikTok</strong>, where it has already accumulated an <strong>impressive 24 million views.</strong></p>
+                
+                <p>And that number keeps growing!</p>
+                
+                <p>So far, the comments and feedback have been excellent, with <strong>thousands of people reporting that they lost 14, 18, or even 20 pounds</strong> in just a few days, <strong>without diets, exercises, and even while eating whatever they wanted.</strong></p>
+                
+                <p>A 36-year-old viewer commented:</p>
+            </div>
+
+            <div class="blockquote">
+                <p><em>"I was very overweight for 5 years. During that time, I had to replace my entire wardrobe because I gained so much weight.</em><br>
+                <em>I tried everything — ketogenic diets, low carb, intermittent fasting, aerobic exercises. But after I started using this Pink Salt Trick that Dr. Means teaches, I lost 50 pounds in about 3 weeks.</em><br>
+                <em>I can even wear most of my old clothes again, not to mention that I feel much more energized and motivated in my daily life."</em></p>
+            </div>
+
+            <!-- Video Title -->
+            <h2 class="video-title">
+                <a href="https://womenstips.online/prznt/vsl/">Watch the step-by-step video here.</a>
+            </h2>
+
+            <!-- Second Image -->
+            <a href="https://womenstips.online/prznt/vsl/">
+                <img src="img/presell175.9-1024x576.webp" 
+                     alt="Step-by-step video" 
+                     class="content-image">
+            </a>
+
+            <div class="content-text">
+                <p><span style="font-weight: 400;">Finally, there's a request that Dr. Means always makes to her viewers:</span></p>
+                
+                <p><strong>"Please share this video with your friends and loved ones. Together, we have the power to help as many women as possible regain a youthful appearance and body."</strong></p>
+                
+                <p><span style="font-weight: 400;">Individual results may vary.</span></p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="button-container">
+                <a href="https://womenstips.online/prznt/vsl/" class="cta-button">
+                    Click To Watch The Video
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="container">
+            <h2 class="footer-title">Copyright 2025 by Womens Tips. All rights reserved.</h2>
+            <div class="footer-text">
+                <p>This site is not a part of the Youtube website or Youtube Inc. Additionally, This site is NOT endorsed by Youtube in any way. YOUTUBE is a trademark of YOUTUBE, Inc.</p>
+
+                <p><strong>FDA Compliance</strong><br>
+                The information on this website has not been evaluated by the Food & Drug Administration or any other medical body. We do not aim to diagnose, treat, cure or prevent any illness or disease. Information is shared for educational purposes only. You should always consult your doctor before acting on any content on this website, especially if you are pregnant, nursing, taking medication or have a medical condition.</p>
+
+                <p><strong>Results May Vary:</strong> the weight loss results testimonials are in no way a guarantee of results. Individual weight loss results, including amount and time, will vary. Whether genetic or environmental, it should be noted that food intake, rates of metabolism and levels of exercise and physical exertion vary from person to person. This means weight loss results will also vary from person to person.</p>
+
+                <p>Some names and personal identifying information on this site have been changed to protect the privacy of individuals.</p>
+
+                <p>No individual result should be seen as typical.</p>
+
+                <p><strong>Marketing Disclosure:</strong> This website is a market place. As such you should know that the owner has a monetary connection to the product and services advertised on the site. The owner receives payment whenever a qualified lead is referred but that is the extent of it.</p>
+
+                <p><strong>Advertising Disclosure:</strong> This website and the products & services referred to on the site are advertising marketplaces. This website is an advertisement and not a news publication. Any photographs of persons used on this site are models. The owner of this site and of the products and services referred to on this site only provides a service where consumers can obtain and compare.</p>
+            </div>
+        </div>
+    </div>
+        <!-- Scripts -->
+        <script>
+            // Data atual
+            const date = new Date();
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            document.getElementById("current-date").innerText = `${date.getDate()}/${months[date.getMonth()]}`;
+    
+            // Proteção contra clique direito e arrastar imagens
+            document.addEventListener('DOMContentLoaded', function () {
+                document.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                });
+    
+                document.querySelectorAll('img').forEach(img => {
+                    img.setAttribute('draggable', 'false');
+                });
+            });
+        </script>
+</body>
+</html>
