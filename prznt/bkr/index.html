@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limited-time presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-section {
+            background-color: #259962;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 200;
+        }
+
+        .header-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 35px;
+            line-height: 1.3;
+            font-family: 'Merriweather', serif;
+        }
+
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .author-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .author-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #9E0000;
+        }
+
+        .author-journal {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .author-date {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #7a7a7a;
+            margin-top: 5px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: justify;
+            font-weight: 500;
+        }
+
+        .content-text h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin: 30px 0 20px 0;
+            font-family: 'Merriweather', serif;
+        }
+
+        .content-text p {
+            margin-bottom: 20px;
+        }
+
+        .content-text strong {
+            font-weight: bold;
+        }
+
+        .blockquote {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007cba;
+            padding: 25px;
+            margin: 35px 0;
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .content-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 40px auto;
+            display: block;
+        }
+
+        .video-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            margin: 30px 0 -10px 0;
+        }
+
+        .video-title a {
+            color: #007cba;
+            text-decoration: none;
+        }
+
+        .video-title a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #259962;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            margin: -30px auto;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #1e7a4f;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .warning-banner {
+            background-color: #ff6b6b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .comments-section {
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 60px;
+            color: #007cba;
+            font-family: 'Merriweather', serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+            object-fit: cover;
+            border: 3px solid #007cba;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-location {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+            font-style: italic;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .testimonial-date {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .testimonial-integrated {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-integrated::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 80px;
+            color: #007cba;
+            font-family: 'Merriweather', serif;
+            opacity: 0.2;
+        }
+
+        .testimonial-image {
+            flex: 0 0 45%;
+            position: relative;
+        }
+
+        .testimonial-main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-main-image:hover {
+            transform: scale(1.02);
+        }
+
+        .testimonial-content {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .comment {
+            display: flex;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            align-items: flex-start;
+        }
+
+        .comment-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .comment-text {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .comment-actions {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .comment-actions a {
+            color: #007cba;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .reaction-image {
+            width: 40px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .reaction-count {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .login-notice {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .footer-section {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.2;
+            color: #666;
+            text-align: center;
+        }
+
+        .footer-text p {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .header-image {
+                max-width: 90%;
+            }
+
+            .article-title {
+                font-size: 26px;
+            }
+
+            .author-section {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .author-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .content-text {
+                font-size: 15px;
+            }
+
+            .blockquote {
+                font-size: 15px;
+                padding: 15px;
+            }
+
+            .testimonial-integrated {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .testimonial-image {
+                flex: 0 0 auto;
+            }
+
+            .testimonial-content {
+                padding-left: 0;
+            }
+
+            .comment {
+                flex-direction: column;
+            }
+            
+            .comment-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Scripts embutidos */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Script para alternar título -->
+    <script>
+        function alternarTitulo() {
+            const titulos = ["📩 (1) Unread Message", "(1) Unread Message "];
+            let indice = 0;
+
+            function atualizarTitulo() {
+                document.title = titulos[indice];
+                indice = (indice + 1) % titulos.length;
+            }
+
+            atualizarTitulo();
+            setInterval(atualizarTitulo, 1000);
+        }
+
+        window.onload = alternarTitulo;
+    </script>
+
+    <!-- Script de Backredirect -->
+    <script>
+        var urlBackRedirect = 'https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr';
+        var shouldRedirect = false;
+        var scrollDetected = false;
+        var ignoreBackRedirect = false;
+
+        if (document.location.search) {
+            urlBackRedirect += (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') + 
+                              document.location.search.replace('?', '').toString();
+        }
+
+        window.addEventListener('scroll', function onScroll() {
+            if (!scrollDetected) {
+                scrollDetected = true;
+                shouldRedirect = true;
+                window.removeEventListener('scroll', onScroll);
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            var target = e.target.closest('#offer, #buy');
+            if (target) {
+                ignoreBackRedirect = true;
+            }
+        });
+
+        history.pushState(null, "", location.href);
+        history.pushState(null, "", location.href);
+
+        window.onpopstate = function () {
+            if (shouldRedirect && !ignoreBackRedirect) {
+                setTimeout(function () {
+                    window.location.href = encodeURI(urlBackRedirect);
+                }, 1);
+            }
+        };
+    </script>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="container">
+            <img src="https://healthlifeexperience.online/wp-content/uploads/2025/06/health-and-wellness-journal.webp" 
+                 alt="Health and Wellness Journal" 
+                 class="header-image">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <h2 class="article-title">🚨 <span style="color: #d32f2f;">WARNING:</span> Weight Loss Industry Giants Attempt to Censor Natural Discovery That's Melting Belly Fat in Women Over 40!</h2>
+            
+            <!-- Author Section -->
+            <div class="author-section">
+                <img src="img/Dr.-Casey-Means.webp" 
+                     alt="Emily Clark" 
+                     class="author-image">
+                <div class="author-info">
+                    <p class="author-name">
+                        Boston,
+                        <span class="author-title">By Emily Clark</span><br>
+                        <span class="author-journal">Health & Wellness Journal</span><br>
+                        <span class="author-date">
+                            <span id="current-date"></span> - Updated 2 hours ago
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="content-text">
+                <p>A natural method capable of fighting inflammatory toxins, reactivating female metabolism, and eliminating stubborn fat — even in women over 40 — is now going viral on social media.</p>
+                
+                <p>But what exactly makes this salt so special and effective for the female body after 40?</p>
+                
+                <p>To answer that question, Casey decided to conduct in-depth research, thoroughly investigating the real causes of weight gain in women within this age group.</p>
+                
+                <p>During her scientific investigation, she identified that <strong>"Fatty Toxins"</strong> were the main culprits sabotaging women's health and figure.</p>
+                
+                <p>Based on this, she developed the revolutionary supplement <strong>Prozenith.</strong></p>
+                
+                <p>Since its launch, <strong>Prozenith</strong> has been attracting the attention of <strong>experts and celebrities</strong> looking for <strong>natural ways to shed stubborn weight, regain energy, and boost self-esteem—regardless of age</strong>.</p>
+            </div>
+
+            <div class="blockquote">
+                <p><strong>"This revolutionary supplement works better than trendy new weight loss products that cost $1,000 or more.</strong><br>
+                You might even feel outraged after seeing how simple it is to burn body fat automatically 24 hours a day, 7 days a week."<br>
+                — Said researcher Casey in an interview with Fox News.</p>
+            </div>
+
+            <div class="content-text">
+                <p><strong>And even ordinary people are posting their stories online about Prozenith</strong></p>
+                
+                <p>( The images and videos here have been used with permission. Use of the photos on other web pages is prohibited.)</p>
+            </div>
+
+            <!-- Integrated Testimonial with Image -->
+            <div class="testimonial-integrated">
+                <div class="testimonial-image">
+                    <a href="https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr">
+                        <img src="img/Captura-de-tela-2025-06-14-140316.png" 
+                             alt="Prozenith Testimonial" 
+                             class="testimonial-main-image">
+                    </a>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Julie R.</div>
+                        <div class="testimonial-location">Dallas, TX</div>
+                    </div>
+                    <div class="testimonial-text">
+                        "I have no regrets about trying Prozenith. My husband noticed the difference in just two weeks. Today, I'm wearing clothes I hadn't worn in years and finally feel beautiful and confident. I just ordered my third kit!"
+                    </div>
+                    <div class="testimonial-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>Verified Purchase</span>
+                    </div>
+                    <div class="testimonial-date">Posted 2 weeks ago</div>
+                </div>
+            </div>
+
+            <!-- Second Integrated Testimonial with Image -->
+            <div class="testimonial-integrated">
+                <div class="testimonial-image">
+                    <a href="https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr">
+                        <img src="img/F162-1.png" 
+                             alt="Prozenith Testimonial" 
+                             class="testimonial-main-image">
+                    </a>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Amy S.</div>
+                        <div class="testimonial-location">New York, NY</div>
+                    </div>
+                    <div class="testimonial-text">
+                        "I was afraid my husband would lose interest in me because of the weight gain. After using Prozenith for just one month, I not only lost weight but also regained my energy and vitality. Now, our married life feels like an endless honeymoon."
+                    </div>
+                    <div class="testimonial-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>Verified Purchase</span>
+                    </div>
+                    <div class="testimonial-date">Posted 1 month ago</div>
+                </div>
+            </div>
+
+            <div class="content-text">
+                <h3>How does Prozenith work?</h3>
+                
+                <p><strong>Prozenith</strong> is the result of <strong>decades of research in women's health</strong>, combining <strong>powerful natural ingredients to fight obesogenic toxins</strong> that prevent the metabolism from functioning properly after 40.</p>
+                
+                <p>With a <strong>unique blend of natural ingredients like Himalayan Pink Salt, Hibiscus Extract, and Wild Siberian Ginseng,</strong> Prozenith eliminates metabolic toxins, increases fat burning, and delivers steady energy throughout the day—<strong>all with just 2 capsules a day</strong>.</p>
+                
+                <p><strong>Thousands of women over 40 have already regained their youthful metabolism, self-esteem, and energy to live life to the fullest!</strong></p>
+            </div>
+
+            <div class="blockquote">
+                <p><strong>"Is Prozenith right for you?<br>
+                The answer is yes."</strong></p>
+            </div>
+
+            <div class="content-text">
+                <p><strong>The answer is YES.</strong></p>
+                
+                <p><strong>1. Himalayan Pink Salt:</strong><br>
+                This special salt from the <strong>Himalayas</strong> is naturally rich in <strong>essential minerals</strong> that can <strong>boost metabolism by up to 527%.</strong><br>
+                Clinical studies have shown that women <strong>who supplemented</strong> with Pink Salt <strong>reduced inches and lost up to 17 pounds</strong> in just a few weeks, <strong>with zero side effects.</strong></p>
+                
+                <p><strong>2. Hibiscus Extract:</strong><br>
+                Called by experts the <strong>"Natural Fat Destroyer,"</strong> Hibiscus Extract helps <strong>regulate female hormone levels</strong>, naturally <strong>unlocking fat cells</strong> and allowing for <strong>fast and healthy fat burning.</strong></p>
+                
+                <p><strong>Reported Results:</strong><br>
+                ✔ <strong>Rapid reduction of belly fat</strong><br>
+                ✔ <strong>Steady energy throughout the day</strong><br>
+                ✔ <strong>Firmer, younger-looking skin</strong><br>
+                ✔ <strong>Metabolism boosted by up to 3x</strong></p>
+                
+                <p><strong>3. Wild Siberian Ginseng:</strong><br>
+                Known as the <strong>"Elixir of Youth,"</strong> this sacred root has been used for centuries to <strong>increase vitality, boost energy, and accelerate the burning of stubborn fat</strong> in women.</p>
+                
+                <p><strong>Clinical Study Results:</strong><br>
+                ✔ <strong>Up to 11 pounds of body weight lost</strong> in the first <strong>few weeks</strong><br>
+                ✔ <strong>Significant reduction in cellulite and sagging skin</strong><br>
+                ✔ <strong>Energy and vitality restored to youthful levels</strong></p>
+                
+                <p>The <strong>exclusive Prozenith formula</strong> combines these <strong>three pure ingredients</strong>, capable of <strong>helping women over 40 eliminate stubborn fat quickly and regain a youthful, healthy figure.</strong></p>
+                
+                <p><strong>Special Discount for Our Special Readers!</strong></p>
+            </div>
+
+            <div class="blockquote">
+                <p><strong>IF YOU'VE MADE IT THIS FAR, YOU'RE ONE OF OUR SPECIAL READERS AND DESERVE A SUPER DISCOUNT!</strong></p>
+            </div>
+
+            <div class="content-text">
+                <p><strong>PLUS:</strong> BY CLAIMING YOUR DISCOUNT TODAY, YOU'LL BE AUTOMATICALLY ENTERED INTO THE DRAWING FOR AN <strong>EXCLUSIVE CRUISE VACATION!</strong></p>
+                
+                <p><strong>DON'T MISS THIS CHANCE!</strong></p>
+                
+                <p>For a <strong>limited time only</strong>, get <strong>Prozenith</strong> with a <strong>special discount and 100% free shipping</strong> on select bundles.</p>
+                
+                <p>After placing your order, <strong>Prozenith</strong> will be delivered <strong>straight to your door</strong>, ready to use.</p>
+                
+                <p>Just <strong>take two capsules a day</strong> and start noticing the difference <strong>within the first few weeks.</strong></p>
+                
+                <p><strong>Important Warning:</strong><br>
+                Due to high demand, the number of bottles available with <strong>discount + free shipping</strong> is limited.</p>
+                
+                <p><strong>Click the button below now and secure your Prozenith with all the benefits!</strong></p>
+            </div>
+
+            <!-- Warning Banner -->
+            <div class="warning-banner">
+                ONLY 7 UNITS LEFT AT DISCOUNTED PRICE!
+            </div>
+
+            <!-- Product Image -->
+            <a href="https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr">
+                <img src="img/img-3-bottles-badge.webp" 
+                     alt="Prozenith Product" 
+                     class="content-image">
+            </a>
+
+            <!-- CTA Button -->
+            <div class="button-container">
+                <a href="https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr" class="cta-button">
+                    BUY HERE AT A DISCOUNT!
+                </a>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2 class="article-title" style="font-size: 24px; margin-bottom: 20px;">4.847 Comments</h2>
+
+                <!-- Comment 1 -->
+                <div class="comment">
+                    <img src="img/profile10-2.webp" alt="Michelle Turner" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Michelle Turner</div>
+                        <div class="comment-text">I can't thank the creators of Prozenith enough — you literally saved my marriage! Being overweight deeply affected my self-esteem and, as a result, my love life. After just 2 months using Prozenith, I lost 15 kg, regained my energy and confidence. My husband and I are living a second honeymoon!</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 2h
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">23</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="comment">
+                    <img src="img/profile2-2.webp" alt="Danielle Miller" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Danielle Miller</div>
+                        <div class="comment-text">I rediscovered who I truly am with Prozenith. I used to avoid mirrors and didn't have the courage to wear tight clothes. In just one month, I lost 9 kg, my waist noticeably slimmed down, and now I leave the house feeling powerful and attractive like never before!</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 35 min
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">17</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 3 -->
+                <div class="comment">
+                    <img src="img/caafc22606ecc23f6f5ff875ef4689c8.jpg" alt="Jessica Wilson" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Jessica Wilson</div>
+                        <div class="comment-text">I use Prozenith every night before bed. Since I started, not only did I lose weight quickly, but my energy completely came back. Now I wake up feeling refreshed and full of life. It feels like a true miracle!</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 7 min
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">11</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 4 -->
+                <div class="comment">
+                    <img src="img/Face-1.jpeg" alt="Julia Davis" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Julia Davis</div>
+                        <div class="comment-text">My belly is so much flatter now and I can finally wear that dress I always dreamed of. Even my friends noticed the difference and want to know my secret! I'm happier and more fulfilled than ever thanks to Prozenith.</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 42 min
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">33</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 5 -->
+                <div class="comment">
+                    <img src="img/Face-3.jpeg" alt="Rebecca Anderson" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Rebecca Anderson</div>
+                        <div class="comment-text">In 5 years of marriage, this is the first time I've seen my husband look at me with admiration and desire again. Prozenith brought a whole new dimension to my life and our relationship.</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 1h
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">54</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 6 -->
+                <div class="comment">
+                    <img src="img/profile1.webp" alt="Sarah Johnson" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Sarah Johnson</div>
+                        <div class="comment-text">I started using Prozenith based on a friend's recommendation after she lost weight quickly with it. By the third day, I already felt less bloated and more energetic. In one month, I lost 7 kg without starving or going on crazy diets. It's by far the best product I've ever tried for weight loss. I'll never go without it again!</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 19min
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">35</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 7 -->
+                <div class="comment">
+                    <img src="img/Face-2.jpeg" alt="Emily Brown" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Emily Brown</div>
+                        <div class="comment-text">I've been using Prozenith regularly for 3 months and have already lost 14 kg. Beyond the weight loss, my skin is firmer, I have the energy to keep up with my kids, and I constantly get compliments. Prozenith has completely transformed my life!</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 19min
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">29</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 8 -->
+                <div class="comment">
+                    <img src="img/Face-4.jpeg" alt="Charlotte Harris" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-name">Charlotte Harris</div>
+                        <div class="comment-text">Thanks to Prozenith, I finally got rid of that stubborn fat on my hips and belly. More than just losing weight, I feel beautiful, healthy, and full of life. I recommend it to every woman who truly wants a transformation!</div>
+                        <div class="comment-actions">
+                            <a href="#">Like</a> 🞄 <a href="#">Reply</a> 🞄 19min
+                        </div>
+                        <div style="display: flex; align-items: center; margin-top: 10px;">
+                            <img src="img/@fbreaction.webp" alt="Reactions" class="reaction-image">
+                            <span class="reaction-count">22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login-notice">
+                    You need to be logged in to comment.
+                </div>
+            </div>
+
+            <!-- Final CTA Button -->
+            <div class="button-container">
+                <a href="https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr" class="cta-button">
+                    BUY HERE AT A DISCOUNT!
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="container">
+            <h2 class="footer-title">Copyright 2025 by Health Life Experience. All rights reserved.</h2>
+            <div class="footer-text">
+                <p>This site is not a part of the Youtube website or Youtube Inc. Additionally, This site is NOT endorsed by Youtube in any way. YOUTUBE is a trademark of YOUTUBE, Inc.</p>
+
+                <p><strong>FDA Compliance</strong><br>
+                The information on this website has not been evaluated by the Food & Drug Administration or any other medical body. We do not aim to diagnose, treat, cure or prevent any illness or disease. Information is shared for educational purposes only. You should always consult your doctor before acting on any content on this website, especially if you are pregnant, nursing, taking medication or have a medical condition.</p>
+
+                <p><strong>Results May Vary:</strong> the weight loss results testimonials are in no way a guarantee of results. Individual weight loss results, including amount and time, will vary. Whether genetic or environmental, it should be noted that food intake, rates of metabolism and levels of exercise and physical exertion vary from person to person. This means weight loss results will also vary from person to person.</p>
+
+                <p>Some names and personal identifying information on this site have been changed to protect the privacy of individuals.</p>
+
+                <p>No individual result should be seen as typical.</p>
+
+                <p><strong>Marketing Disclosure:</strong> This website is a market place. As such you should know that the owner has a monetary connection to the product and services advertised on the site. The owner receives payment whenever a qualified lead is referred but that is the extent of it.</p>
+
+                <p><strong>Advertising Disclosure:</strong> This website and the products & services referred to on the site are advertising marketplaces. This website is an advertisement and not a news publication. Any photographs of persons used on this site are models. The owner of this site and of the products and services referred to on this site only provides a service where consumers can obtain and compare.</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
