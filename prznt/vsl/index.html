@@ -5,134 +5,580 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-		<title>Pink Salt Trick</title>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<title>Women's Health & Wellness</title>
 		<style>
+			:root {
+				--primary-color: #2c3e50;
+				--secondary-color: #8e44ad;
+				--accent-color: #e74c3c;
+				--text-dark: #2c3e50;
+				--text-light: #7f8c8d;
+				--bg-light: #f8f9fa;
+				--white: #ffffff;
+				--border-color: #ecf0f1;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
 			body {
-			margin: 0;
-			font-family: 'Lato', Arial, sans-serif;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23fde6e6" fill-opacity="1" d="M0,64L48,74.7C96,85,192,107,288,133.3C384,160,480,192,576,213.3C672,235,768,245,864,224C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-			background-size: cover;
-			background-repeat: no-repeat;
-			color: #161616;
-			line-height: 1.6;
+				font-family: 'Source Sans Pro', sans-serif;
+				background-color: var(--bg-light);
+				color: var(--text-dark);
+				line-height: 1.6;
+				font-size: 16px;
 			}
-			.head {
-			background-color: #F7CAC9;
-			color: #ffffff;
-			padding: 10px 20px;
+
+			/* Header Styles */
+			.header {
+				background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+				color: var(--white);
+				padding: 15px 0;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				position: sticky;
+				top: 0;
+				z-index: 1000;
 			}
-			.head-inner {
-			max-width: 800px;
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+
+			.header-inner {
+				max-width: 1200px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 20px;
 			}
-			.head .icon svg {
-			height: 20px;
-			fill: white;
+
+			.logo {
+				display: flex;
+				align-items: center;
+				gap: 10px;
 			}
-			.head .title {
-			flex: 1;
-			text-align: center;
-			font-size: 26px;
-			font-weight: 900;
-			font-family: "Playfair Display", serif;
+
+			.logo-icon {
+				width: 32px;
+				height: 32px;
+				background: var(--accent-color);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
-			.footer {
-			background-color: #F7CAC9;
-			color: white;
-			padding: 20px 20px;
-			font-size: 14px;
-			text-align: center;
-			margin-top: 60px;
+
+			.logo-icon svg {
+				width: 18px;
+				height: 18px;
+				fill: var(--white);
 			}
-			.footer-content {
-			max-width: 800px;
-			margin: 0 auto;
+
+			.logo-text {
+				font-family: 'Merriweather', serif;
+				font-size: 24px;
+				font-weight: 700;
+				letter-spacing: -0.5px;
 			}
-			.footer-links {
-			margin-top: 10px;
+
+			.nav-menu {
+				display: flex;
+				gap: 30px;
+				list-style: none;
 			}
-			.footer-links a {
-			color: #ffffff;
-			text-decoration: none;
-			margin: 0 8px;
-			transition: color 0.3s ease;
+
+			.nav-menu a {
+				color: var(--white);
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.3s ease;
+				position: relative;
 			}
-			.footer-links a:hover {
-			color: #d1edf7;
+
+			.nav-menu a:hover {
+				color: #f39c12;
 			}
-			.footer-links span {
-			color: #ffffff;
-			margin: 0 5px;
+
+			.nav-menu a::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 0;
+				height: 2px;
+				background: #f39c12;
+				transition: width 0.3s ease;
 			}
-			/* Letreiro de Notícias */
+
+			.nav-menu a:hover::after {
+				width: 100%;
+			}
+
+			/* News Ticker */
 			.news-ticker {
-			width: 100%;
-			background-color: #bc4161;
-			color: white;
-			overflow: hidden;
-			padding: 8px 0;
-			font-size: 12px;
-			font-weight: normal;
-			white-space: nowrap;
-			position: relative;
-			display: flex;
-			align-items: center;
-			height: 20px;
-			text-transform: uppercase;
-			font-family: "Lato", serif;
+				background: linear-gradient(90deg, var(--accent-color) 0%, #c0392b 100%);
+				color: var(--white);
+				padding: 12px 0;
+				font-size: 14px;
+				font-weight: 500;
+				overflow: hidden;
+				position: relative;
 			}
+
 			.ticker-wrapper {
-			display: flex;
-			width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+				display: flex;
+				align-items: center;
+				gap: 20px;
 			}
+
+			.ticker-label {
+				background: rgba(255,255,255,0.2);
+				padding: 4px 12px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				white-space: nowrap;
+			}
+
 			.ticker-content {
-			display: flex;
-			white-space: nowrap;
-			animation: ticker-scroll 35s linear infinite;
+				display: flex;
+				white-space: nowrap;
+				animation: ticker-scroll 60s linear infinite;
+				flex: 1;
 			}
+
 			.ticker-content span {
-			padding-right: 50px;
+				padding-right: 50px;
+				font-weight: 400;
 			}
+
 			@keyframes ticker-scroll {
-			from {
-			transform: translateX(0);
+				from { transform: translateX(0); }
+				to { transform: translateX(-50%); }
 			}
-			to {
-			transform: translateX(-50%);
+
+			/* Main Container */
+			.main-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 40px 20px;
 			}
+
+			.page-title {
+				text-align: center;
+				margin-bottom: 40px;
 			}
-			.container {
-			max-width: 800px;
-			margin: auto;
-			padding: 10px;
+
+			.page-title h1 {
+				font-family: 'Merriweather', serif;
+				font-size: 42px;
+				font-weight: 700;
+				color: var(--primary-color);
+				margin-bottom: 15px;
+				line-height: 1.2;
 			}
+
+			.page-title .subtitle {
+				font-size: 26px;
+				color: var(--text-light);
+				font-weight: 400;
+				max-width: 600px;
+				margin: 0 auto;
+				position: relative;
+				padding-bottom: 20px;
+			}
+
+			.page-title .subtitle::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 80px;
+				height: 4px;
+				background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+				border-radius: 2px;
+			}
+
+			/* Video Container */
 			.video-container {
-			position: relative;
-			width: auto;
-			max-width: 800px;
-			margin: 20px auto 100px auto;
-			padding: 0 5px;
-			overflow: hidden;
+				position: relative;
+				width: 100%;
+				max-width: 800px;
+				margin: 0 auto 40px auto;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+				z-index: 1;
 			}
-			.credencial {
-			background-color: #E6E6FA;
-			padding: 25px;
-			border-radius: 12px;
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-			text-align: justify;
-			font-size: 18px;
-			line-height: 1.5;
-			margin-top: 40px;
+
+			/* Comments Section */
+			.comments-section {
+				background: var(--white);
+				border-radius: 12px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+				padding: 40px;
+				margin-top: 80px;
 			}
+
+			.comments-title {
+				font-family: 'Merriweather', serif;
+				font-size: 24px;
+				font-weight: 700;
+				color: var(--primary-color);
+				margin-bottom: 30px;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.comments-title::before {
+				content: '💬';
+				font-size: 20px;
+			}
+
+			.comment {
+				border-bottom: 1px solid var(--border-color);
+				padding: 15px 0;
+				margin-bottom: 15px;
+			}
+
+			.comment:last-child {
+				border-bottom: none;
+			}
+
+			.comment-header {
+				display: flex;
+				align-items: center;
+				margin-bottom: 8px;
+				gap: 10px;
+			}
+
+			.comment-avatar {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--white);
+				font-weight: 600;
+				font-size: 14px;
+			}
+
+			.comment-author {
+				font-weight: 600;
+				color: var(--primary-color);
+				font-size: 15px;
+			}
+
+			.comment-time {
+				color: var(--text-light);
+				font-size: 13px;
+				margin-left: auto;
+			}
+
+			.comment-content {
+				font-size: 15px;
+				line-height: 1.5;
+				color: var(--text-dark);
+				margin-left: 42px;
+			}
+
+			.comment-actions {
+				display: flex;
+				gap: 15px;
+				margin-top: 8px;
+				margin-left: 42px;
+			}
+
+			.comment-action {
+				color: var(--text-light);
+				font-size: 14px;
+				text-decoration: none;
+				transition: color 0.3s ease;
+				cursor: pointer;
+			}
+
+			.comment-action:hover {
+				color: var(--accent-color);
+			}
+
+			.comment-likes {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+			}
+
+			.comment-likes::before {
+				content: '❤️';
+				font-size: 12px;
+			}
+
+			.load-more-comments {
+				text-align: center;
+				margin-top: 30px;
+				padding: 20px;
+				border-top: 1px solid var(--border-color);
+			}
+
+			.load-more-btn {
+				background: #95a5a6;
+				color: var(--white);
+				border: none;
+				padding: 12px 30px;
+				border-radius: 25px;
+				font-size: 16px;
+				font-weight: 600;
+				cursor: not-allowed;
+				transition: all 0.3s ease;
+				box-shadow: 0 2px 8px rgba(149, 165, 166, 0.3);
+				opacity: 0.7;
+				position: relative;
+			}
+
+			.load-more-btn:hover {
+				opacity: 0.8;
+				transform: none;
+				box-shadow: 0 2px 8px rgba(149, 165, 166, 0.3);
+			}
+
+			.load-more-btn::after {
+				content: '🔒';
+				margin-left: 8px;
+				font-size: 14px;
+			}
+
+			.comments-count {
+				color: var(--text-light);
+				font-size: 14px;
+				margin-bottom: 15px;
+				font-weight: 500;
+			}
+
+			.subscription-notice {
+				color: var(--accent-color);
+				font-size: 12px;
+				font-weight: 600;
+				margin-top: 8px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			/* Footer */
+			.footer {
+				background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+				color: var(--white);
+				padding: 40px 20px;
+				margin-top: 60px;
+			}
+
+			.footer-content {
+				max-width: 1200px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.footer-brand {
+				font-family: 'Merriweather', serif;
+				font-size: 24px;
+				font-weight: 700;
+				margin-bottom: 20px;
+			}
+
+			.footer-description {
+				font-size: 16px;
+				opacity: 0.9;
+				margin-bottom: 30px;
+				max-width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.footer-links {
+				display: flex;
+				justify-content: center;
+				gap: 30px;
+				flex-wrap: wrap;
+			}
+
+			.footer-links a {
+				color: var(--white);
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.3s ease;
+				position: relative;
+			}
+
+			.footer-links a:hover {
+				color: #f39c12;
+			}
+
+			.footer-links a::after {
+				content: '';
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 0;
+				height: 1px;
+				background: #f39c12;
+				transition: width 0.3s ease;
+			}
+
+			.footer-links a:hover::after {
+				width: 100%;
+			}
+
+			.footer-copyright {
+				margin-top: 30px;
+				padding-top: 20px;
+				border-top: 1px solid rgba(255,255,255,0.2);
+				font-size: 14px;
+				opacity: 0.8;
+			}
+
+			/* Responsive Design */
+			@media (max-width: 1024px) {
+				.main-container {
+					padding: 35px 25px;
+				}
+
+				.page-title h1 {
+					font-size: 36px;
+				}
+
+				.page-title .subtitle {
+					font-size: 22px;
+				}
+			}
+
 			@media (max-width: 768px) {
-			.credencial {
-			font-size: 16px;
-			padding: 20px;
+				.header-inner {
+					flex-direction: column;
+					gap: 15px;
+				}
+
+				.nav-menu {
+					gap: 20px;
+				}
+
+				.page-title h1 {
+					font-size: 32px;
+				}
+
+				.page-title .subtitle {
+					font-size: 20px;
+				}
+
+				.main-container {
+					padding: 30px 20px;
+				}
+
+				.comments-section {
+					padding: 25px;
+				}
+
+				.video-container {
+					max-width: 100%;
+					margin: 0;
+					border-radius: 0;
+				}
+
+				.comment-content,
+				.comment-actions {
+					margin-left: 0;
+				}
+
+				.comment {
+					padding: 12px 0;
+					margin-bottom: 12px;
+				}
+
+				.comment-header {
+					margin-bottom: 6px;
+					gap: 8px;
+				}
+
+				.comment-avatar {
+					width: 28px;
+					height: 28px;
+					font-size: 12px;
+				}
+
+				.load-more-comments {
+					margin-top: 20px;
+					padding: 15px;
+				}
+
+				.load-more-btn {
+					padding: 10px 25px;
+					font-size: 14px;
+				}
+
+				.subscription-notice {
+					font-size: 11px;
+					margin-top: 6px;
+				}
+
+				.footer-links {
+					flex-direction: row;
+					gap: 20px;
+					justify-content: center;
+					flex-wrap: wrap;
+				}
+
+				.footer-brand {
+					font-size: 20px;
+				}
+
+				.footer-description {
+					font-size: 14px;
+				}
+
+				.news-ticker {
+					display: none;
+				}
 			}
+
+			@media (max-width: 480px) {
+				.main-container {
+					padding: 20px 15px;
+				}
+
+				.page-title h1 {
+					font-size: 28px;
+				}
+
+				.page-title .subtitle {
+					font-size: 18px;
+				}
+
+				.comments-title {
+					font-size: 20px;
+				}
+
+				.comment-author {
+					font-size: 14px;
+				}
+
+				.comment-content {
+					font-size: 14px;
+				}
+
+				.footer-brand {
+					font-size: 18px;
+				}
+
+				.footer-description {
+					font-size: 13px;
+				}
 			}
 		</style>
 		<script
@@ -161,50 +607,49 @@
 		</script>
 	</head>
 	<body>
-		<div class="head">
-			<div class="head-inner">
-				<div class="icon">
-					<!-- Lupa -->
-					<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 512 512" fill="white">
-						<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 
-							93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 
-							128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 
-							33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 
-							336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 
-							70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/>
-					</svg>
+		<header class="header">
+			<div class="header-inner">
+				<div class="logo">
+					<div class="logo-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+						</svg>
+					</div>
+					<div class="logo-text">Women's Health</div>
 				</div>
-				<div class="title">Women's Health</div>
-				<div class="icon">
-					<!-- Barras -->
-					<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 448 512" fill="white">
-						<path d="M0 88C0 74.7 10.7 64 24 64H424c13.3 0 
-							24 10.7 24 24s-10.7 24-24 24H24C10.7 
-							112 0 101.3 0 88zm0 160c0-13.3 10.7-24 
-							24-24H424c13.3 0 24 10.7 24 
-							24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm448 
-							160c0 13.3-10.7 24-24 24H24c-13.3 
-							0-24-10.7-24-24s10.7-24 24-24H424c13.3 
-							0 24 10.7 24 24z"/>
-					</svg>
-				</div>
+				<nav>
+					<ul class="nav-menu">
+						<li><a href="#wellness">Wellness</a></li>
+						<li><a href="#nutrition">Nutrition</a></li>
+						<li><a href="#fitness">Fitness</a></li>
+						<li><a href="#lifestyle">Lifestyle</a></li>
+					</ul>
+				</nav>
 			</div>
-		</div>
+		</header>
+
 		<div class="news-ticker">
 			<div class="ticker-wrapper">
+				<div class="ticker-label">Breaking News</div>
 				<div class="ticker-content">
-					<span>Daily updates on wellness and health!</span>
-					<span>Daily updates on wellness and health! </span>
-					<span>Daily updates on wellness and health! </span>
-					<span>Daily updates on wellness and health! </span>
-					<span>Daily updates on wellness and health! </span>
-					<span>Daily updates on wellness and health! </span>
-					<span>Daily updates on wellness and health! </span>
-					<span>Daily updates on wellness and health! </span>
+					<span>Revolutionary health discovery transforms women's wellness worldwide</span>
+					<span>Expert reveals breakthrough method for natural health optimization</span>
+					<span>Thousands of women report life-changing results with new approach</span>
+					<span>Medical professionals endorse innovative wellness technique</span>
+					<span>Revolutionary health discovery transforms women's wellness worldwide</span>
+					<span>Expert reveals breakthrough method for natural health optimization</span>
+					<span>Thousands of women report life-changing results with new approach</span>
+					<span>Medical professionals endorse innovative wellness technique</span>
 				</div>
 			</div>
 		</div>
-		<div class="container">
+
+		<main class="main-container">
+			<div class="page-title">
+				<h1>Never Mix Pink Salt With These 3 Ingredients</h1>
+				<p class="subtitle"><em>Unless You Want to Burn 24lbs in 15 Days</em></p>
+			</div>
+
 			<div class="video-container">
 				<vturb-smartplayer id="vid-684adea60586706228237327" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
 				<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/684adea60586706228237327/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
@@ -214,18 +659,130 @@
 					}
 				</style>
 			</div>
-		</div>
+
+			<section class="comments-section">
+				<h3 class="comments-title">What Our Readers Are Saying</h3>
+				
+				<div class="comment">
+					<div class="comment-header">
+						<div class="comment-avatar">SA</div>
+						<div class="comment-author">Samantha Anderson</div>
+						<div class="comment-time">2 hours ago</div>
+					</div>
+					<div class="comment-content">
+						"I've been taking it for 16 consecutive days, I've lost 17 lbs and reduced my waist by 10 cm. I'm going to keep taking it, this is wonderful 😍"
+					</div>
+					<div class="comment-actions">
+						<div class="comment-likes">23 likes</div>
+						<a href="#" class="comment-action">Like</a>
+						<a href="#" class="comment-action">Reply</a>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="comment-header">
+						<div class="comment-avatar">AT</div>
+						<div class="comment-author">Ashley Thompson</div>
+						<div class="comment-time">5 hours ago</div>
+					</div>
+					<div class="comment-content">
+						"FINALLY, SOMEONE WHO PRESENTS A SOLUTION THAT ACTUALLY WORKS AT THE END OF THE VIDEO... THANK YOUUUU! I STARTED TODAY ❤️"
+					</div>
+					<div class="comment-actions">
+						<div class="comment-likes">17 likes</div>
+						<a href="#" class="comment-action">Like</a>
+						<a href="#" class="comment-action">Reply</a>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="comment-header">
+						<div class="comment-avatar">JD</div>
+						<div class="comment-author">Jennifer Davis</div>
+						<div class="comment-time">1 day ago</div>
+					</div>
+					<div class="comment-content">
+						"You explain things very clearly, and that's exactly what we, ordinary people, need. I'm going to start using this method today."
+					</div>
+					<div class="comment-actions">
+						<div class="comment-likes">11 likes</div>
+						<a href="#" class="comment-action">Like</a>
+						<a href="#" class="comment-action">Reply</a>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="comment-header">
+						<div class="comment-avatar">MR</div>
+						<div class="comment-author">Melissa Rivera</div>
+						<div class="comment-time">2 days ago</div>
+					</div>
+					<div class="comment-content">
+						"I've been doing this trick for 15 days, on the scale I've only lost 23 lbs, but with the tape measure even I was surprised, I lost 9 centimeters. I loved it!"
+					</div>
+					<div class="comment-actions">
+						<div class="comment-likes">33 likes</div>
+						<a href="#" class="comment-action">Like</a>
+						<a href="#" class="comment-action">Reply</a>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="comment-header">
+						<div class="comment-avatar">EJ</div>
+						<div class="comment-author">Emily Johnson</div>
+						<div class="comment-time">3 days ago</div>
+					</div>
+					<div class="comment-content">
+						"Very well explained and straightforward video, no beating around the bush, congratulations 😍"
+					</div>
+					<div class="comment-actions">
+						<div class="comment-likes">54 likes</div>
+						<a href="#" class="comment-action">Like</a>
+						<a href="#" class="comment-action">Reply</a>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="comment-header">
+						<div class="comment-avatar">LB</div>
+						<div class="comment-author">Lauren Brown</div>
+						<div class="comment-time">3 days ago</div>
+					</div>
+					<div class="comment-content">
+						"You have helped me a lot. A few years ago, I went through the worst moment of my life, I began to pray, read the Bible, and found this video, what a blessing. I've been doing this trick for 5 days now and already feel like another person, more willing, with more desire to live, and I've already lost about 6.6 lbs."
+					</div>
+					<div class="comment-actions">
+						<div class="comment-likes">67 likes</div>
+						<a href="#" class="comment-action">Like</a>
+						<a href="#" class="comment-action">Reply</a>
+					</div>
+				</div>
+
+				<div class="load-more-comments">
+					<div class="comments-count">Showing 6 of 4.847 comments</div>
+					<button class="load-more-btn" onclick="return false;" disabled>
+						Load More Comments
+					</button>
+					<div class="subscription-notice">Subscription Required</div>
+				</div>
+			</section>
+		</main>
+
 		<footer class="footer">
 			<div class="footer-content">
-				<p>&copy; 2025 Vitamax Institute. All rights reserved.</p>
+				<div class="footer-brand">Women's Health & Wellness</div>
+				<p class="footer-description">Your trusted source for evidence-based health information, wellness tips, and lifestyle guidance designed specifically for women's unique health needs.</p>
 				<div class="footer-links">
 					<a href="privacy.html" target="_blank">Privacy Policy</a>
-					<span>|</span>
 					<a href="terms.html" target="_blank">Terms of Use</a>
-					<span>|</span>
 					<a href="disclaimer.html" target="_blank">Disclaimer</a>
+				</div>
+				<div class="footer-copyright">
+					&copy; 2025 Women's Health & Wellness Institute. All rights reserved.
 				</div>
 			</div>
 		</footer>
 	</body>
+</html>
 </html>
