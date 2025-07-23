@@ -581,30 +581,44 @@
 				}
 			}
 		</style>
-		<script
-			src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-			data-utmify-prevent-xcod-sck
-			data-utmify-is-click-bank
-			async
-			defer
-			></script>
-		<script>
-			window.googlePixelId = "682010f673b6e30c5c92e8df";
-			var a = document.createElement("script");
-			a.setAttribute("async", "");
-			a.setAttribute("defer", "");
-			a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-google.js");
-			document.head.appendChild(a);
-		</script>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-022NJ0BERF"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			
-			gtag('config', 'G-022NJ0BERF');
-		</script>
+		    <!-- Script de Backredirect -->
+    <script>
+        var urlBackRedirect = 'https://womenstips.online/prznt/vsl/';
+        var shouldRedirect = false;
+        var scrollDetected = false;
+        var ignoreBackRedirect = false;
+
+        if (document.location.search) {
+            urlBackRedirect += (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') + 
+                              document.location.search.replace('?', '').toString();
+        }
+
+        window.addEventListener('scroll', function onScroll() {
+            if (!scrollDetected) {
+                scrollDetected = true;
+                shouldRedirect = true;
+                window.removeEventListener('scroll', onScroll);
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            var target = e.target.closest('#offer, #buy, .load-more-btn, .comment-action');
+            if (target) {
+                ignoreBackRedirect = true;
+            }
+        });
+
+        history.pushState(null, "", location.href);
+        history.pushState(null, "", location.href);
+
+        window.onpopstate = function () {
+            if (shouldRedirect && !ignoreBackRedirect) {
+                setTimeout(function () {
+                    window.location.href = encodeURI(urlBackRedirect);
+                }, 1);
+            }
+        };
+    </script>
 	</head>
 	<body>
 		<header class="header">
@@ -783,44 +797,6 @@
 				</div>
 			</div>
 		</footer>
-
-		<!-- Script de Backredirect -->
-		<script>
-			var urlBackRedirect = 'https://womenstips.online/prznt/vsl/';
-			var shouldRedirect = false;
-			var scrollDetected = false;
-			var ignoreBackRedirect = false;
-
-			if (document.location.search) {
-				urlBackRedirect += (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') + 
-								  document.location.search.replace('?', '').toString();
-			}
-
-			window.addEventListener('scroll', function onScroll() {
-				if (!scrollDetected) {
-					scrollDetected = true;
-					shouldRedirect = true;
-					window.removeEventListener('scroll', onScroll);
-				}
-			});
-
-			document.addEventListener('click', function (e) {
-				var target = e.target.closest('#offer, #buy');
-				if (target) {
-					ignoreBackRedirect = true;
-				}
-			});
-
-			history.pushState(null, "", location.href);
-			history.pushState(null, "", location.href);
-
-			window.onpopstate = function () {
-				if (shouldRedirect && !ignoreBackRedirect) {
-					setTimeout(function () {
-						window.location.href = encodeURI(urlBackRedirect);
-					}, 1);
-				}
-			};
-		</script>
 	</body>
+</html>
 </html>
