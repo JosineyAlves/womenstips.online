@@ -522,47 +522,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         window.onload = alternarTitulo;
     </script>
-
-    <!-- Script de Backredirect -->
-    <script>
-        var urlBackRedirect = 'https://hop.clickbank.net/?affiliate=josiney&vendor=prozenith&pg=dtc&tid=bkr';
-        var shouldRedirect = false;
-        var scrollDetected = false;
-        var ignoreBackRedirect = false;
-
-        if (document.location.search) {
-            urlBackRedirect += (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') + 
-                              document.location.search.replace('?', '').toString();
-        }
-
-        window.addEventListener('scroll', function onScroll() {
-            if (!scrollDetected) {
-                scrollDetected = true;
-                shouldRedirect = true;
-                window.removeEventListener('scroll', onScroll);
-            }
-        });
-
-        document.addEventListener('click', function (e) {
-            var target = e.target.closest('#offer, #buy');
-            if (target) {
-                ignoreBackRedirect = true;
-            }
-        });
-
-        history.pushState(null, "", location.href);
-        history.pushState(null, "", location.href);
-
-        window.onpopstate = function () {
-            if (shouldRedirect && !ignoreBackRedirect) {
-                setTimeout(function () {
-                    window.location.href = encodeURI(urlBackRedirect);
-                }, 1);
-            }
-        };
-    </script>
-
-    <!-- Header Section -->
+  <!-- Header Section -->
     <div class="header-section">
         <div class="container">
             <img src="img/health-and-wellness-journal.webp" 
